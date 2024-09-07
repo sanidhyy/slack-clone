@@ -1,0 +1,4 @@
+tasks:
+  - name: Bun Setup
+    before: curl -fsSL https://bun.sh/install | bash
+    command: source /home/gitpod/.bashrc
