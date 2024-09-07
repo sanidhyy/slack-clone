@@ -12,6 +12,8 @@
     "format:fix": "prettier --write . --config .prettierrc.mjs"
   },
   "dependencies": {
+    "@auth/core": "^0.34.2",
+    "@convex-dev/auth": "^0.0.65",
     "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.0",
