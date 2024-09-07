@@ -33,9 +33,7 @@
     "eslint-plugin-prettier": "^5.2.1",
     "postcss": "^8",
     "prettier-plugin-tailwindcss": "^0.6.6",
-    "sort-classes": "npm:prettier-plugin-tailwindcss",
     "tailwindcss": "^3.4.1",
-    "tidy-imports": "npm:@trivago/prettier-plugin-sort-imports",
     "typescript": "^5"
   }
 }
