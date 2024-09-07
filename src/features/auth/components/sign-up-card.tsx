@@ -1,4 +1,5 @@
 import { useAuthActions } from '@convex-dev/auth/react';
+import { TriangleAlert } from 'lucide-react';
 import { useState } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
@@ -19,11 +20,40 @@ export const SignUpCard = ({ setState }: SignUpCardProps) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
   const [pending, setPending] = useState(false);
 
   const handleOAuthSignUp = (value: 'github' | 'google') => {
     setPending(true);
     signIn(value).finally(() => setPending(false));
+  };
+
+  const handleSignUp = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const validateEmail = (email: string) => {
+      return String(email)
+        .toLowerCase()
+        .match(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+        );
+    };
+
+    const validatePassword = (password: string) => {
+      return String(password).match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,15}$/);
+    };
+
+    if (!validateEmail(email)) return setError('Invalid Email.');
+    if (password !== confirmPassword) return setError("Password and Confirm Password doesn't match.");
+    if (!validatePassword(password)) return setError('Password must be strong.');
+
+    setPending(true);
+    setError('');
+    signIn('password', { email, password, flow: 'signUp' })
+      .catch(() => {
+        setError('Something went wrong!');
+      })
+      .finally(() => setPending(false));
   };
 
   return (
@@ -33,8 +63,15 @@ export const SignUpCard = ({ setState }: SignUpCardProps) => {
         <CardDescription>Use your email or another service to continue.</CardDescription>
       </CardHeader>
 
+      {!!error && (
+        <div className="bg-destructive/15 p-3 rounded-md flex items-center gap-x-2 text-sm text-destructive mb-6">
+          <TriangleAlert className="size-4" />
+          <p>{error}</p>
+        </div>
+      )}
+
       <CardContent className="space-y-5 px-0 pb-0">
-        <form className="space-y-2.5">
+        <form onSubmit={handleSignUp} className="space-y-2.5">
           <Input disabled={pending} value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" type="email" required />
           <Input
             disabled={pending}
