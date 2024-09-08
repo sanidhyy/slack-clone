@@ -35,6 +35,10 @@ export const CreateWorkspaceModal = () => {
 
           handleClose();
         },
+        onError: (error) => {
+          console.error('[CREATE_WORKSPACE]: ', error);
+          toast.error('Failed to create workspace.');
+        },
       },
     );
   };
