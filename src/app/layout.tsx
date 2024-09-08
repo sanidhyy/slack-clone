@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import { PropsWithChildren } from 'react';
 
 import { ConvexClientProvider } from '@/components/convex-client-provider';
+import { ModalProvider } from '@/components/modal-provider';
 
 import './globals.css';
 
@@ -21,7 +22,11 @@ const RootLayout = ({ children }: Readonly<PropsWithChildren>) => {
     <ConvexAuthNextjsServerProvider>
       <html lang="en">
         <body className={`${inter.className} antialiased`}>
-          <ConvexClientProvider>{children}</ConvexClientProvider>
+          <ConvexClientProvider>
+            <ModalProvider />
+
+            {children}
+          </ConvexClientProvider>
         </body>
       </html>
     </ConvexAuthNextjsServerProvider>
