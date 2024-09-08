@@ -5,6 +5,7 @@ import { PropsWithChildren } from 'react';
 
 import { ConvexClientProvider } from '@/components/convex-client-provider';
 import { ModalProvider } from '@/components/modal-provider';
+import { Toaster } from '@/components/ui/sonner';
 
 import './globals.css';
 
@@ -23,6 +24,7 @@ const RootLayout = ({ children }: Readonly<PropsWithChildren>) => {
       <html lang="en">
         <body className={`${inter.className} antialiased`}>
           <ConvexClientProvider>
+            <Toaster theme="light" richColors closeButton />
             <ModalProvider />
 
             {children}
