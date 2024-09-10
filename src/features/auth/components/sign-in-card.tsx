@@ -86,7 +86,11 @@ export const SignInCard = ({ setState }: SignInCardProps) => {
 
         <p className="text-xs text-muted-foreground text-center">
           Don&apos;t have an account?{' '}
-          <button disabled={pending} onClick={() => setState('signUp')} className="text-sky-700 font-medium hover:underline cursor-pointer">
+          <button
+            disabled={pending}
+            onClick={() => setState('signUp')}
+            className="text-sky-700 disabled:pointer-events-none disabled:opacity-50 font-medium hover:underline cursor-pointer"
+          >
             Sign up
           </button>
         </p>

@@ -1,6 +1,7 @@
 'use client';
 
 import { Trash } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { toast } from 'sonner';
 
@@ -18,6 +19,7 @@ interface PreferencesModalProps {
 }
 
 export const PreferencesModal = ({ open, setOpen, initialValue }: PreferencesModalProps) => {
+  const router = useRouter();
   const workspaceId = useWorkspaceId();
 
   const [value, setValue] = useState(initialValue);
@@ -25,6 +27,25 @@ export const PreferencesModal = ({ open, setOpen, initialValue }: PreferencesMod
 
   const { mutate: updateWorkspace, isPending: isUpdatingWorkspace } = useUpdateWorkspace();
   const { mutate: removeWorkspace, isPending: isRemovingWorkspace } = useRemoveWorkspace();
+
+  const handleRemove = () => {
+    removeWorkspace(
+      {
+        id: workspaceId,
+      },
+      {
+        onSuccess: () => {
+          toast.success('Workspace removed.');
+
+          setOpen(false);
+          router.replace('/');
+        },
+        onError: () => {
+          toast.error('Failed to remove workspace.');
+        },
+      },
+    );
+  };
 
   const handleEdit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,7 +68,7 @@ export const PreferencesModal = ({ open, setOpen, initialValue }: PreferencesMod
   };
 
   return (
-    <Dialog open={open || isUpdatingWorkspace} onOpenChange={setOpen}>
+    <Dialog open={open || isUpdatingWorkspace || isRemovingWorkspace} onOpenChange={setOpen}>
       <DialogContent className="p-0 bg-gray-50 overflow-hidden">
         <DialogHeader className="p-4 border-b bg-white">
           <DialogTitle>{value}</DialogTitle>
@@ -56,7 +77,10 @@ export const PreferencesModal = ({ open, setOpen, initialValue }: PreferencesMod
         <div className="px-4 pb-4 flex flex-col gap-y-2">
           <Dialog open={editOpen || isUpdatingWorkspace} onOpenChange={setEditOpen}>
             <DialogTrigger asChild>
-              <button className="flex flex-col w-full px-5 py-4 bg-white rounded-lg border cursor-pointer hover:bg-gray-50">
+              <button
+                disabled={isUpdatingWorkspace || isRemovingWorkspace}
+                className="flex flex-col disabled:pointer-events-none disabled:opacity-50 w-full px-5 py-4 bg-white rounded-lg border cursor-pointer hover:bg-gray-50"
+              >
                 <div className="flex items-center justify-between w-full">
                   <p className="text-sm font-semibold">Workspace name</p>
 
@@ -98,9 +122,9 @@ export const PreferencesModal = ({ open, setOpen, initialValue }: PreferencesMod
           </Dialog>
 
           <button
-            disabled={false}
-            onClick={() => {}}
-            className="flex items-center gap-x-2 px-5 py-4 bg-white rounded-lg cursor-pointer border hover:bg-gray-50 text-rose-600"
+            disabled={isRemovingWorkspace}
+            onClick={handleRemove}
+            className="flex items-center disabled:pointer-events-none disabled:opacity-50 gap-x-2 px-5 py-4 bg-white rounded-lg cursor-pointer border hover:bg-gray-50 text-rose-600"
           >
             <Trash className="size-4" />
             <p className="text-sm font-semibold">Delete workspace</p>
