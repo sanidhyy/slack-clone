@@ -1,12 +1,22 @@
 'use client';
 
+import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import { Trash } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { toast } from 'sonner';
 
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { useRemoveWorkspace } from '@/features/workspaces/api/use-remove-workspace';
 import { useUpdateWorkspace } from '@/features/workspaces/api/use-update-workspace';
@@ -83,6 +93,10 @@ export const PreferencesModal = ({ open, setOpen, initialValue }: PreferencesMod
             <DialogTitle>{value}</DialogTitle>
           </DialogHeader>
 
+          <VisuallyHidden.Root>
+            <DialogDescription>Your workspace preferences</DialogDescription>
+          </VisuallyHidden.Root>
+
           <div className="px-4 pb-4 flex flex-col gap-y-2">
             <Dialog open={editOpen || isUpdatingWorkspace} onOpenChange={setEditOpen}>
               <DialogTrigger asChild>
@@ -104,6 +118,10 @@ export const PreferencesModal = ({ open, setOpen, initialValue }: PreferencesMod
                 <DialogHeader>
                   <DialogTitle>Rename this workspace</DialogTitle>
                 </DialogHeader>
+
+                <VisuallyHidden.Root>
+                  <DialogDescription>Rename your workspace to match your case.</DialogDescription>
+                </VisuallyHidden.Root>
 
                 <form className="space-y-4" onSubmit={handleEdit}>
                   <Input
