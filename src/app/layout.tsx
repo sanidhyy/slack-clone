@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import { PropsWithChildren } from 'react';
 
 import { ConvexClientProvider } from '@/components/convex-client-provider';
+import { JotaiProvider } from '@/components/jotai-provider';
 import { ModalProvider } from '@/components/modal-provider';
 import { Toaster } from '@/components/ui/sonner';
 
@@ -24,10 +25,12 @@ const RootLayout = ({ children }: Readonly<PropsWithChildren>) => {
       <html lang="en">
         <body className={`${inter.className} antialiased`}>
           <ConvexClientProvider>
-            <Toaster theme="light" richColors closeButton />
-            <ModalProvider />
+            <JotaiProvider>
+              <Toaster theme="light" richColors closeButton />
+              <ModalProvider />
 
-            {children}
+              {children}
+            </JotaiProvider>
           </ConvexClientProvider>
         </body>
       </html>
