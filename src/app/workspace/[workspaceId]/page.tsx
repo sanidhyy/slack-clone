@@ -43,16 +43,12 @@ const WorkspaceIdPage = () => {
     );
   }
 
-  if (!channels || channels?.length === 0) {
-    return (
-      <div className="h-full bg-[#5E2C5F]/95 text-white flex-1 flex items-center justify-center flex-col gap-2">
-        <TriangleAlert className="size-6" />
-        <span className="text-sm">No Channels found.</span>
-      </div>
-    );
-  }
-
-  return null;
+  return (
+    <div className="h-full bg-[#5E2C5F]/95 text-white flex-1 flex items-center justify-center flex-col gap-2">
+      <TriangleAlert className="size-6" />
+      <span className="text-sm">No Channel(s) found.</span>
+    </div>
+  );
 };
 
 export default WorkspaceIdPage;

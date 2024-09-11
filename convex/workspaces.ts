@@ -133,7 +133,7 @@ export const getInfoById = query({
   handler: async (ctx, args) => {
     const userId = await getAuthUserId(ctx);
 
-    if (!userId) throw new Error('Unauthorized.');
+    if (!userId) return null;
 
     const member = await ctx.db
       .query('members')
@@ -141,6 +141,8 @@ export const getInfoById = query({
       .unique();
 
     const workspace = await ctx.db.get(args.id);
+
+    if (!workspace) return null;
 
     return {
       name: workspace?.name,
