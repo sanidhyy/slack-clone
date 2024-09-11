@@ -51,9 +51,11 @@ export const WorkspaceSidebar = () => {
         <SidebarItem label="Drafts & Sent" icon={SendHorizonal} id="draft" />
       </div>
 
-      <WorkspaceSection label="Channels" hint="New Channel" onNew={member.role === 'admin' ? () => setOpen(true) : undefined}>
-        {channels?.map((item) => <SidebarItem key={item._id} id={item._id} icon={HashIcon} label={item.name} />)}
-      </WorkspaceSection>
+      {channels && channels.length !== 0 && (
+        <WorkspaceSection label="Channels" hint="New Channel" onNew={member.role === 'admin' ? () => setOpen(true) : undefined}>
+          {channels?.map((item) => <SidebarItem key={item._id} id={item._id} icon={HashIcon} label={item.name} />)}
+        </WorkspaceSection>
+      )}
 
       <WorkspaceSection label="Direct Messages" hint="New Direct Message" onNew={member.role === 'admin' ? () => {} : undefined}>
         {members?.map((item) => <UserItem key={item._id} id={item._id} label={item.user.name} image={item.user.image} />)}
