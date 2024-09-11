@@ -1,14 +1,16 @@
+'use client';
+
 import { useQuery } from 'convex/react';
 
 import { api } from '@/../convex/_generated/api';
 import type { Id } from '@/../convex/_generated/dataModel';
 
-interface UseGetChannelsProps {
+interface UseGetMembersProps {
   workspaceId: Id<'workspaces'>;
 }
 
-export const useGetChannels = ({ workspaceId }: UseGetChannelsProps) => {
-  const data = useQuery(api.channels.get, { workspaceId });
+export const useGetMembers = ({ workspaceId }: UseGetMembersProps) => {
+  const data = useQuery(api.members.get, { workspaceId });
 
   const isLoading = data === undefined;
 
