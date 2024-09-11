@@ -1,3 +1,5 @@
+'use client';
+
 import { PlusIcon } from 'lucide-react';
 import type { PropsWithChildren } from 'react';
 import { FaCaretDown } from 'react-icons/fa';
