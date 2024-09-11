@@ -3,6 +3,7 @@ import type { LucideIcon } from 'lucide-react';
 import Link from 'next/link';
 import type { IconType } from 'react-icons/lib';
 
+import { Id } from '@/../convex/_generated/dataModel';
 import { Button } from '@/components/ui/button';
 import { useWorkspaceId } from '@/hooks/use-workspace-id';
 import { cn } from '@/lib/utils';
@@ -22,7 +23,7 @@ const sidebarItemsVariants = cva('flex items-center gap-1.5 justify-start font-n
 interface SidebarItemProps {
   id: string;
   icon: LucideIcon | IconType;
-  label: string;
+  label: Id<'channels'> | string;
   variant?: VariantProps<typeof sidebarItemsVariants>['variant'];
 }
 
