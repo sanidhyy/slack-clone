@@ -4,10 +4,12 @@ import { AlertTriangle, HashIcon, Loader, MessageSquareText, SendHorizonal } fro
 
 import { useGetChannels } from '@/features/channels/api/use-get-channels';
 import { useCurrentMember } from '@/features/members/api/use-current-member';
+import { useGetMembers } from '@/features/members/api/use-get-members';
 import { useGetWorkspace } from '@/features/workspaces/api/use-get-workspace';
 import { useWorkspaceId } from '@/hooks/use-workspace-id';
 
 import { SidebarItem } from './sidebar-item';
+import { UserItem } from './user-item';
 import { WorkspaceHeader } from './workspace-header';
 import { WorkspaceSection } from './workspace-section';
 
@@ -17,6 +19,7 @@ export const WorkspaceSidebar = () => {
   const { data: member, isLoading: memberLoading } = useCurrentMember({ workspaceId });
   const { data: workspace, isLoading: workspaceLoading } = useGetWorkspace({ id: workspaceId });
   const { data: channels, isLoading: channelsLoading } = useGetChannels({ workspaceId });
+  const { data: members, isLoading: membersLoading } = useGetMembers({ workspaceId });
 
   if (memberLoading || workspaceLoading) {
     return (
@@ -47,6 +50,10 @@ export const WorkspaceSidebar = () => {
 
       <WorkspaceSection label="Channels" hint="New Channel" onNew={() => {}}>
         {channels?.map((item) => <SidebarItem key={item._id} id={item._id} icon={HashIcon} label={item.name} />)}
+      </WorkspaceSection>
+
+      <WorkspaceSection label="Direct Messages" hint="New Direct Message" onNew={() => {}}>
+        {members?.map((item) => <UserItem key={item._id} id={item._id} label={item.user.name} image={item.user.image} />)}
       </WorkspaceSection>
     </div>
   );
