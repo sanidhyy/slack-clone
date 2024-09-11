@@ -19,10 +19,10 @@ export const useJoin = () => {
   const [error, setError] = useState<Error | null>(null);
   const [status, setStatus] = useState<'success' | 'error' | 'settled' | 'pending' | null>(null);
 
-  const isPending = useMemo(() => status === 'pending', []);
-  const isSuccess = useMemo(() => status === 'success', []);
-  const isError = useMemo(() => status === 'error', []);
-  const isSettled = useMemo(() => status === 'settled', []);
+  const isPending = useMemo(() => status === 'pending', [status]);
+  const isSuccess = useMemo(() => status === 'success', [status]);
+  const isError = useMemo(() => status === 'error', [status]);
+  const isSettled = useMemo(() => status === 'settled', [status]);
 
   const mutation = useMutation(api.workspaces.join);
 
