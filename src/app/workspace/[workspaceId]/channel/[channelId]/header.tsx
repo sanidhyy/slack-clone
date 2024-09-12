@@ -19,6 +19,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { useRemoveChannel } from '@/features/channels/api/use-remove-channel';
 import { useUpdateChannel } from '@/features/channels/api/use-update-channel';
+import { useCurrentMember } from '@/features/members/api/use-current-member';
 import { useChannelId } from '@/hooks/use-channel-id';
 import { useConfirm } from '@/hooks/use-confirm';
 import { useWorkspaceId } from '@/hooks/use-workspace-id';
@@ -39,6 +40,7 @@ export const Header = ({ channelName }: HeaderProps) => {
   const [value, setValue] = useState(channelName);
   const [editOpen, setEditOpen] = useState(false);
 
+  const { data: member, isLoading: memberLoading } = useCurrentMember({ workspaceId });
   const { mutate: updateChannel, isPending: isUpdatingChannel } = useUpdateChannel();
   const { mutate: removeChannel, isPending: isRemovingChannel } = useRemoveChannel();
 
@@ -46,6 +48,12 @@ export const Header = ({ channelName }: HeaderProps) => {
     const value = e.target.value.replace(/\s+/g, '-').toLowerCase();
 
     setValue(value);
+  };
+
+  const handleEditOpen = (value: boolean) => {
+    if (member?.role !== 'admin') return;
+
+    setEditOpen(value);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -91,7 +99,7 @@ export const Header = ({ channelName }: HeaderProps) => {
 
       <Dialog>
         <DialogTrigger asChild>
-          <Button variant="ghost" className="text-lg font-semibold px-2 overflow-hidden w-auto" size="sm">
+          <Button disabled={memberLoading} variant="ghost" className="text-lg font-semibold px-2 overflow-hidden w-auto" size="sm">
             <span className="truncate"># {channelName}</span>
             <FaChevronDown className="size-2.5 ml-2" />
           </Button>
@@ -107,7 +115,7 @@ export const Header = ({ channelName }: HeaderProps) => {
           </DialogHeader>
 
           <div className="px-4 pb-4 flex flex-col gap-y-2">
-            <Dialog open={editOpen || isUpdatingChannel} onOpenChange={setEditOpen}>
+            <Dialog open={editOpen || isUpdatingChannel} onOpenChange={handleEditOpen}>
               <DialogTrigger asChild>
                 <button
                   disabled={isUpdatingChannel}
@@ -115,7 +123,7 @@ export const Header = ({ channelName }: HeaderProps) => {
                 >
                   <div className="flex items-center justify-between w-full">
                     <p className="text-sm font-semibold">Channel name</p>
-                    <p className="text-sm text-[#1264A3] hover:underline font-semibold">Edit</p>
+                    {member?.role === 'admin' && <p className="text-sm text-[#1264A3] hover:underline font-semibold">Edit</p>}
                   </div>
 
                   <p className="text-sm"># {channelName}</p>
@@ -156,14 +164,16 @@ export const Header = ({ channelName }: HeaderProps) => {
               </DialogContent>
             </Dialog>
 
-            <button
-              onClick={handleDelete}
-              disabled={isRemovingChannel}
-              className="flex disabled:pointer-events-none disabled:opacity-50 items-center gap-x-2 px-5 py-4 bg-white rounded-lg cursor-pointer border hover:bg-gray-50 text-rose-600"
-            >
-              <Trash className="size-4" />
-              <p className="text-sm font-semibold">Delete channel</p>
-            </button>
+            {member?.role === 'admin' && (
+              <button
+                onClick={handleDelete}
+                disabled={isRemovingChannel}
+                className="flex disabled:pointer-events-none disabled:opacity-50 items-center gap-x-2 px-5 py-4 bg-white rounded-lg cursor-pointer border hover:bg-gray-50 text-rose-600"
+              >
+                <Trash className="size-4" />
+                <p className="text-sm font-semibold">Delete channel</p>
+              </button>
+            )}
           </div>
         </DialogContent>
       </Dialog>
