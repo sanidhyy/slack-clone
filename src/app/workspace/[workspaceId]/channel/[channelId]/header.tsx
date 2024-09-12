@@ -1,3 +1,5 @@
+'use client';
+
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import { Trash } from 'lucide-react';
 import { useRouter } from 'next/navigation';
