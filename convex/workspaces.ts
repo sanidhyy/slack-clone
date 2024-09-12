@@ -147,6 +147,7 @@ export const getInfoById = query({
     return {
       name: workspace?.name,
       isMember: !!member,
+      role: member?.role,
     };
   },
 });
