@@ -9,6 +9,7 @@ import { PiTextAa } from 'react-icons/pi';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
+import { EmojiPopover } from './emoji-popover';
 import { Hint } from './hint';
 
 type EditorValue = {
@@ -118,6 +119,14 @@ const Editor = ({
     if (toolbarElement) toolbarElement.classList.toggle('hidden');
   };
 
+  const onEmojiSelect = (emoji: any) => {
+    const quill = quillRef.current;
+
+    if (!quill) return;
+
+    quill.insertText(quill.getSelection()?.index || 0, emoji.native);
+  };
+
   const isIOS = /iPad|iPhone|iPod|Mac/.test(navigator.userAgent);
 
   const isEmpty = text.replace(/<(.|\n)*?>/g, '').trim().length === 0;
@@ -134,11 +143,11 @@ const Editor = ({
             </Button>
           </Hint>
 
-          <Hint label="Emoji">
-            <Button disabled={disabled} size="iconSm" variant="ghost" onClick={() => {}}>
+          <EmojiPopover onEmojiSelect={onEmojiSelect}>
+            <Button disabled={disabled} size="iconSm" variant="ghost">
               <Smile className="size-4" />
             </Button>
-          </Hint>
+          </EmojiPopover>
 
           {variant === 'create' && (
             <Hint label="Image">
