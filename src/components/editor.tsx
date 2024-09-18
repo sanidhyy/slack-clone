@@ -154,7 +154,7 @@ const Editor = ({
           disabled && 'opacity-50',
         )}
       >
-        <div ref={containerRef} className="h-full ql-renderer" />
+        <div ref={containerRef} className="h-full" />
 
         {!!image && (
           <div className="p-2">

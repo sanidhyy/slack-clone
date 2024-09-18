@@ -122,4 +122,9 @@
   .ql-renderer {
     @apply !p-0;
   }
+
+  .messages-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #dcdcdc #f8f8f8;
+  }
 }
