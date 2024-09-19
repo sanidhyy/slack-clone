@@ -118,11 +118,11 @@
   @apply !truncate;
 }
 
-@layer utilities {
-  .ql-renderer {
-    @apply !p-0;
-  }
+.ql-renderer {
+  @apply !p-0;
+}
 
+@layer utilities {
   .messages-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: #dcdcdc #f8f8f8;

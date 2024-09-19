@@ -190,3 +190,30 @@ export const create = mutation({
     return messageId;
   },
 });
+
+export const update = mutation({
+  args: {
+    id: v.id('messages'),
+    body: v.string(),
+  },
+  handler: async (ctx, args) => {
+    const userId = await getAuthUserId(ctx);
+
+    if (!userId) throw new Error('Unauthorized.');
+
+    const message = await ctx.db.get(args.id);
+
+    if (!message) throw new Error('Message not found.');
+
+    const member = await getMember(ctx, message.workspaceId, userId);
+
+    if (!member || member._id !== message.memberId) throw new Error('Unauthorized.');
+
+    await ctx.db.patch(args.id, {
+      body: args.body,
+      updatedAt: Date.now(),
+    });
+
+    return args.id;
+  },
+});
