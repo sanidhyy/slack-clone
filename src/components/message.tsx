@@ -13,6 +13,7 @@ import { cn } from '@/lib/utils';
 import type { Doc, Id } from '../../convex/_generated/dataModel';
 import { Hint } from './hint';
 import { Reactions } from './reactions';
+import { ThreadBar } from './thread-bar';
 import { Thumbnail } from './thumbnail';
 import { Toolbar } from './toolbar';
 
@@ -41,6 +42,7 @@ interface MessageProps {
   hideThreadButton?: boolean;
   threadCount?: number;
   threadImage?: string;
+  threadName?: string;
   threadTimestamp?: number;
 }
 
@@ -65,6 +67,7 @@ export const Message = ({
   isCompact,
   threadCount,
   threadImage,
+  threadName,
   threadTimestamp,
 }: MessageProps) => {
   const [ConfirmDialog, confirm] = useConfirm('Delete message', 'Are you sure you want to delete this message? This cannot be undone.');
@@ -160,6 +163,13 @@ export const Message = ({
                 {updatedAt ? <span className="text-xs text-muted-foreground">(edited)</span> : null}
 
                 <Reactions data={reactions} onChange={handleReaction} />
+                <ThreadBar
+                  count={threadCount}
+                  image={threadImage}
+                  name={threadName}
+                  timestamp={threadTimestamp}
+                  onClick={() => onOpenMessage(id)}
+                />
               </div>
             )}
           </div>
@@ -230,6 +240,13 @@ export const Message = ({
               {updatedAt ? <span className="text-xs text-muted-foreground">(edited)</span> : null}
 
               <Reactions data={reactions} onChange={handleReaction} />
+              <ThreadBar
+                count={threadCount}
+                image={threadImage}
+                name={threadName}
+                timestamp={threadTimestamp}
+                onClick={() => onOpenMessage(id)}
+              />
             </div>
           )}
         </div>
