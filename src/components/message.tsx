@@ -71,7 +71,7 @@ export const Message = ({
   threadTimestamp,
 }: MessageProps) => {
   const [ConfirmDialog, confirm] = useConfirm('Delete message', 'Are you sure you want to delete this message? This cannot be undone.');
-  const { parentMessageId, onOpenMessage, onClose } = usePanel();
+  const { parentMessageId, onOpenMessage, onOpenProfile, onClose } = usePanel();
 
   const { mutate: updateMessage, isPending: isUpdatingMessage } = useUpdateMessage();
   const { mutate: removeMessage, isPending: isRemovingMessage } = useRemoveMessage();
@@ -202,7 +202,7 @@ export const Message = ({
         )}
       >
         <div className="flex items-start gap-2">
-          <button>
+          <button onClick={() => onOpenProfile(memberId)}>
             <Avatar>
               <AvatarImage alt={authorName} src={authorImage} />
 
@@ -223,7 +223,7 @@ export const Message = ({
           ) : (
             <div className="flex flex-col w-full overflow-hidden">
               <div className="text-sm">
-                <button onClick={() => {}} className="font-bold text-primary hover:underline">
+                <button onClick={() => onOpenProfile(memberId)} className="font-bold text-primary hover:underline">
                   {authorName}
                 </button>
 
