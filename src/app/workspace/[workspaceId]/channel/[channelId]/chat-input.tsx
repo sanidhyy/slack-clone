@@ -27,6 +27,7 @@ type CreateMessageValues = {
 export const ChatInput = ({ placeholder }: ChatInputProps) => {
   const [editorKey, setEditorKey] = useState(0);
   const [isPending, setIsPending] = useState(false);
+
   const innerRef = useRef<Quill | null>(null);
 
   const workspaceId = useWorkspaceId();
