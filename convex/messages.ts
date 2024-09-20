@@ -76,7 +76,7 @@ export const get = query({
     let _conversationId = args.conversationId;
 
     // replying in a thread in 1-1 conversation
-    if (!args.conversationId && args.channelId && args.parentMessageId) {
+    if (!args.conversationId && !args.channelId && args.parentMessageId) {
       const parentMessage = await ctx.db.get(args.parentMessageId);
 
       if (!parentMessage) throw new Error('Parent message not found.');
