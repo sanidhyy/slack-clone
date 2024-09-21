@@ -59,6 +59,8 @@ export const update = mutation({
 
     if (!member || member.role !== 'admin') throw new Error('Unauthorized.');
 
+    if (args.name.length < 3 || args.name.length > 20) throw new Error('Invalid channel name.');
+
     const parsedName = args.name.replace(/\s+/g, '-').toLowerCase();
 
     await ctx.db.patch(args.id, {
