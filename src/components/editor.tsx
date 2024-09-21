@@ -65,7 +65,10 @@ const Editor = ({
 
     const options: QuillOptions = {
       modules: {
-        toolbar: [['bold', 'italic', 'strike'], ['link'], [{ list: 'ordered' }, { list: 'bullet' }]],
+        toolbar: [
+          ['bold', 'italic', 'strike'],
+          [{ list: 'ordered' }, { list: 'bullet' }],
+        ],
         keyboard: {
           bindings: {
             enter: {
