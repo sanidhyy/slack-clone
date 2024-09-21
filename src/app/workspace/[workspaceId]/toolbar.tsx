@@ -1,9 +1,10 @@
 'use client';
 
-import { Info, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { FaGithub } from 'react-icons/fa';
 
 import type { Id } from '@/../convex/_generated/dataModel';
 import { Button } from '@/components/ui/button';
@@ -17,6 +18,7 @@ import {
   CommandList,
   CommandSeparator,
 } from '@/components/ui/command';
+import { links } from '@/config';
 import { useGetChannels } from '@/features/channels/api/use-get-channels';
 import { useGetMembers } from '@/features/members/api/use-get-members';
 import { useGetWorkspace } from '@/features/workspaces/api/use-get-workspace';
@@ -81,8 +83,10 @@ export const Toolbar = () => {
       </div>
 
       <div className="ml-auto flex-1 flex items-center justify-end">
-        <Button variant="transparent" size="iconSm">
-          <Info className="size-5 text-white" />
+        <Button variant="transparent" size="iconSm" asChild>
+          <Link href={links.sourceCode} target="_blank" rel="noreferrer noopener" title="Source Code">
+            <FaGithub className="size-5 text-white" />
+          </Link>
         </Button>
       </div>
     </nav>
