@@ -3,7 +3,7 @@
 import { Search } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaGithub } from 'react-icons/fa';
 
 import type { Id } from '@/../convex/_generated/dataModel';
@@ -46,6 +46,17 @@ export const Toolbar = () => {
     router.push(`/workspace/${workspaceId}/member/${memberId}`);
   };
 
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        setOpen((open) => !open);
+      }
+    };
+    document.addEventListener('keydown', down);
+    return () => document.removeEventListener('keydown', down);
+  }, []);
+
   return (
     <nav className="bg-[#481349] flex items-center justify-between h-10 p-1.5">
       <div className="flex-1" aria-hidden />
@@ -54,10 +65,14 @@ export const Toolbar = () => {
         <Button onClick={() => setOpen(true)} size="sm" className="bg-accent/25 hover:bg-accent/25 w-full justify-start h-7 px-2">
           <Search className="size-4 text-white mr-2" />
           <span className="text-white text-xs">Search {data?.name ?? 'workspace'}...</span>
+
+          <kbd className="pointer-events-none ml-auto inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-90">
+            <span className="text-xs">⌘</span>K
+          </kbd>
         </Button>
 
         <CommandDialog open={open} onOpenChange={setOpen}>
-          <CommandInput placeholder="Type a command or search..." />
+          <CommandInput placeholder={`Search ${data?.name ?? 'workspace'}...`} />
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
 
