@@ -6,6 +6,13 @@ import { toast } from 'sonner';
 import type { Id } from '@/../convex/_generated/dataModel';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import { Separator } from '@/components/ui/separator';
 import { useConfirm } from '@/hooks/use-confirm';
 import { useWorkspaceId } from '@/hooks/use-workspace-id';
@@ -72,6 +79,8 @@ export const Profile = ({ memberId, onClose }: ProfileProps) => {
   };
 
   const onUpdate = async (role: 'admin' | 'member') => {
+    if (member?.role === role) return;
+
     const ok = await confirmUpdate();
 
     if (!ok) return;
@@ -81,7 +90,6 @@ export const Profile = ({ memberId, onClose }: ProfileProps) => {
       {
         onSuccess: () => {
           toast.success('Role changed.');
-          onClose();
         },
         onError: () => toast.error('Failed to change role.'),
       },
@@ -155,9 +163,20 @@ export const Profile = ({ memberId, onClose }: ProfileProps) => {
 
           {currentMember.role === 'admin' && currentMember._id !== memberId ? (
             <div className="flex items-center gap-2 mt-4">
-              <Button variant="outline" className="w-full capitalize">
-                {member.role} <ChevronDown className="size-4 ml-2" />
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" className="w-full capitalize">
+                    {member.role} <ChevronDown className="size-4 ml-2" />
+                  </Button>
+                </DropdownMenuTrigger>
+
+                <DropdownMenuContent className="w-full">
+                  <DropdownMenuRadioGroup value={member.role} onValueChange={(role) => onUpdate(role as 'admin' | 'member')}>
+                    <DropdownMenuRadioItem value="admin">Admin</DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="member">Member</DropdownMenuRadioItem>
+                  </DropdownMenuRadioGroup>
+                </DropdownMenuContent>
+              </DropdownMenu>
 
               <Button onClick={onRemove} variant="outline" className="w-full">
                 Remove
