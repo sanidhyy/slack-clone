@@ -1,5 +1,6 @@
 'use client';
 
+import { Loader } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import type Quill from 'quill';
 import { useRef, useState } from 'react';
@@ -10,7 +11,14 @@ import { useCreateMessage } from '@/features/messages/api/use-create-message';
 import { useGenerateUploadUrl } from '@/features/upload/api/use-generate-upload-url';
 import { useWorkspaceId } from '@/hooks/use-workspace-id';
 
-const Editor = dynamic(() => import('@/components/editor'), { ssr: false });
+const Editor = dynamic(() => import('@/components/editor'), {
+  ssr: false,
+  loading: () => (
+    <div className="h-full flex items-center justify-center">
+      <Loader className="size-6 animate-spin text-muted-foreground" />
+    </div>
+  ),
+});
 
 interface ChatInputProps {
   placeholder?: string;

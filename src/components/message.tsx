@@ -1,4 +1,5 @@
 import { format, isToday, isYesterday } from 'date-fns';
+import { Loader } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { toast } from 'sonner';
 
@@ -17,8 +18,22 @@ import { ThreadBar } from './thread-bar';
 import { Thumbnail } from './thumbnail';
 import { Toolbar } from './toolbar';
 
-const Renderer = dynamic(() => import('./renderer'), { ssr: false });
-const Editor = dynamic(() => import('./editor'), { ssr: false });
+const Renderer = dynamic(() => import('./renderer'), {
+  ssr: false,
+  loading: () => (
+    <div className="h-full flex items-center justify-center">
+      <Loader className="size-6 animate-spin text-muted-foreground" />
+    </div>
+  ),
+});
+const Editor = dynamic(() => import('./editor'), {
+  ssr: false,
+  loading: () => (
+    <div className="h-full flex items-center justify-center">
+      <Loader className="size-6 animate-spin text-muted-foreground" />
+    </div>
+  ),
+});
 
 interface MessageProps {
   id: Id<'messages'>;
