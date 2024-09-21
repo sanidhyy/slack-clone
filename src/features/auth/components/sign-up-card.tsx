@@ -82,6 +82,7 @@ export const SignUpCard = ({ setState }: SignUpCardProps) => {
             maxLength={50}
             required
           />
+
           <Input disabled={pending} value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" type="email" required />
           <Input
             disabled={pending}
@@ -91,6 +92,7 @@ export const SignUpCard = ({ setState }: SignUpCardProps) => {
             type="password"
             required
           />
+
           <Input
             disabled={pending}
             value={confirmPassword}

@@ -56,6 +56,7 @@ export const SignInCard = ({ setState }: SignInCardProps) => {
       <CardContent className="space-y-5 px-0 pb-0">
         <form onSubmit={handleSignIn} className="space-y-2.5">
           <Input disabled={pending} value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" type="email" required />
+
           <Input
             disabled={pending}
             value={password}

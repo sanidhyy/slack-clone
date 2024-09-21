@@ -77,6 +77,8 @@ export const create = mutation({
 
     if (!userId) throw new Error('Unauthorized.');
 
+    if (args.name.length < 3 || args.name.length > 20) throw new Error('Invalid workspace name.');
+
     const joinCode = generateCode();
 
     const workspaceId = await ctx.db.insert('workspaces', {
