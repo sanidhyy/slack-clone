@@ -58,13 +58,13 @@ export const Toolbar = () => {
   }, []);
 
   return (
-    <nav className="bg-[#481349] flex items-center justify-between h-10 p-1.5">
+    <nav className="flex h-10 items-center justify-between bg-[#481349] p-1.5">
       <div className="flex-1" aria-hidden />
 
-      <div className="min-w-[280px] max-w-[642px] grow-[2] shrink">
-        <Button onClick={() => setOpen(true)} size="sm" className="bg-accent/25 hover:bg-accent/25 w-full justify-start h-7 px-2">
-          <Search className="size-4 text-white mr-2" />
-          <span className="text-white text-xs">Search {data?.name ?? 'workspace'}...</span>
+      <div className="min-w-[280px] max-w-[642px] shrink grow-[2]">
+        <Button onClick={() => setOpen(true)} size="sm" className="h-7 w-full justify-start bg-accent/25 px-2 hover:bg-accent/25">
+          <Search className="mr-2 size-4 text-white" />
+          <span className="text-xs text-white">Search {data?.name ?? 'workspace'}...</span>
 
           <kbd className="pointer-events-none ml-auto inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-90">
             <span className="text-xs">⌘</span>K
@@ -97,7 +97,7 @@ export const Toolbar = () => {
         </CommandDialog>
       </div>
 
-      <div className="ml-auto flex-1 flex items-center justify-end">
+      <div className="ml-auto flex flex-1 items-center justify-end">
         <Button variant="transparent" size="iconSm" asChild>
           <Link href={links.sourceCode} target="_blank" rel="noreferrer noopener" title="Source Code">
             <FaGithub className="size-5 text-white" />

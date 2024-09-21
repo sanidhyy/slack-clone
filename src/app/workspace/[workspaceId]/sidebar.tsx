@@ -10,7 +10,7 @@ export const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <aside className="w-[70px] h-full bg-[#381349] flex flex-col gap-y-4 items-center pt-[9px] pb-[4px]">
+    <aside className="flex h-full w-[70px] flex-col items-center gap-y-4 bg-[#381349] pb-[4px] pt-[9px]">
       <WorkspaceSwitcher />
 
       <SidebarButton icon={Home} label="Home" isActive={pathname.includes('/workspace')} />
@@ -18,7 +18,7 @@ export const Sidebar = () => {
       <SidebarButton icon={Bell} label="Activity" />
       <SidebarButton icon={MoreHorizontal} label="More" />
 
-      <div className="flex flex-col items-center justify-center gap-y-1 mt-auto">
+      <div className="mt-auto flex flex-col items-center justify-center gap-y-1">
         <UserButton />
       </div>
     </aside>

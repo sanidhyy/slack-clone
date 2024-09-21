@@ -14,7 +14,7 @@ import { useWorkspaceId } from '@/hooks/use-workspace-id';
 const Editor = dynamic(() => import('@/components/editor'), {
   ssr: false,
   loading: () => (
-    <div className="h-full flex items-center justify-center">
+    <div className="flex h-full items-center justify-center">
       <Loader className="size-6 animate-spin text-muted-foreground" />
     </div>
   ),
@@ -90,7 +90,7 @@ export const ChatInput = ({ placeholder, conversationId }: ChatInputProps) => {
   };
 
   return (
-    <div className="px-5 w-full">
+    <div className="w-full px-5">
       <Editor placeholder={placeholder} key={editorKey} onSubmit={handleSubmit} disabled={isPending} innerRef={innerRef} />
     </div>
   );

@@ -25,14 +25,14 @@ export const Conversation = ({ id }: ConversationProps) => {
 
   if (memberLoading || status === 'LoadingFirstPage') {
     return (
-      <div className="h-full flex items-center justify-center">
+      <div className="flex h-full items-center justify-center">
         <Loader className="size-6 animate-spin text-muted-foreground" />
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex h-full flex-col">
       <Header memberName={member?.user.name} memberImage={member?.user.image} onClick={() => onOpenProfile(memberId)} />
 
       <MessageList

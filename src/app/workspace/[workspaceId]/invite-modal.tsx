@@ -62,18 +62,18 @@ export const InviteModal = ({ open, setOpen, name, joinCode }: InviteModalProps)
             <DialogDescription>Use the code below to invite people to your workspace.</DialogDescription>
           </DialogHeader>
 
-          <div className="flex flex-col gap-y-4 items-center justify-center py-10">
-            <p className="text-4xl font-bold tracking-widest uppercase">{joinCode}</p>
+          <div className="flex flex-col items-center justify-center gap-y-4 py-10">
+            <p className="text-4xl font-bold uppercase tracking-widest">{joinCode}</p>
 
             <Button disabled={isPending} onClick={handleCopy} variant="ghost" size="sm">
-              Copy link <CopyIcon className="size-4 ml-2" />
+              Copy link <CopyIcon className="ml-2 size-4" />
             </Button>
           </div>
 
-          <div className="flex items-center justify-between w-full">
+          <div className="flex w-full items-center justify-between">
             <Button disabled={isPending} onClick={handleNewCode} variant="outline">
               New code
-              <RefreshCcw className="size-4 ml-2" />
+              <RefreshCcw className="ml-2 size-4" />
             </Button>
 
             <DialogClose asChild>

@@ -28,7 +28,7 @@ const WorkspaceIdPage = () => {
 
   if (workspaceLoading || channelsLoading) {
     return (
-      <div className="h-full flex-1 flex bg-[#5E2C5F]/95 text-white items-center justify-center flex-col gap-2">
+      <div className="flex h-full flex-1 flex-col items-center justify-center gap-2 bg-[#5E2C5F]/95 text-white">
         <Loader className="size-5 animate-spin" />
       </div>
     );
@@ -36,7 +36,7 @@ const WorkspaceIdPage = () => {
 
   if (!workspaceId || !workspace) {
     return (
-      <div className="h-full flex-1 flex bg-[#5E2C5F]/95 text-white items-center justify-center flex-col gap-2">
+      <div className="flex h-full flex-1 flex-col items-center justify-center gap-2 bg-[#5E2C5F]/95 text-white">
         <TriangleAlert className="size-5" />
         <span className="text-sm">Workspace not found.</span>
       </div>
@@ -44,7 +44,7 @@ const WorkspaceIdPage = () => {
   }
 
   return (
-    <div className="h-full bg-[#5E2C5F]/95 text-white flex-1 flex items-center justify-center flex-col gap-2">
+    <div className="flex h-full flex-1 flex-col items-center justify-center gap-2 bg-[#5E2C5F]/95 text-white">
       <TriangleAlert className="size-5" />
       <span className="text-sm">No Channel(s) found.</span>
     </div>

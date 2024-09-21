@@ -19,16 +19,16 @@ export const WorkspaceSection = ({ children, hint, label, onNew }: PropsWithChil
   const [on, toggle] = useToggle(true);
 
   return (
-    <div className="flex flex-col mt-3 px-2">
-      <div className="flex items-center px-3.5 group">
-        <Button onClick={toggle} variant="transparent" className="p-0.5 text-sm text-[#F9EDFFCC] shrink-0 size-6">
+    <div className="mt-3 flex flex-col px-2">
+      <div className="group flex items-center px-3.5">
+        <Button onClick={toggle} variant="transparent" className="size-6 shrink-0 p-0.5 text-sm text-[#F9EDFFCC]">
           <FaCaretDown className={cn('size-4 transition-transform', !on && '-rotate-90')} />
         </Button>
 
         <Button
           variant="transparent"
           size="sm"
-          className="group px-1.5 text-sm text-[#F9EDFFCC] h-[28px] justify-start overflow-hidden items-center"
+          className="group h-[28px] items-center justify-start overflow-hidden px-1.5 text-sm text-[#F9EDFFCC]"
         >
           <span className="truncate">{label}</span>
         </Button>
@@ -39,7 +39,7 @@ export const WorkspaceSection = ({ children, hint, label, onNew }: PropsWithChil
               onClick={onNew}
               variant="transparent"
               size="iconSm"
-              className="opacity-0 group-hover:opacity-100 transition-opacity ml-auto p-0.5 text-sm text-[#F9EDFFCC] size-6 shrink-0"
+              className="ml-auto size-6 shrink-0 p-0.5 text-sm text-[#F9EDFFCC] opacity-0 transition-opacity group-hover:opacity-100"
             >
               <PlusIcon className="size-5" />
             </Button>

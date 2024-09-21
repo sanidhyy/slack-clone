@@ -98,8 +98,8 @@ export const Profile = ({ memberId, onClose }: ProfileProps) => {
 
   if (isMemberLoading || isCurrentMemberLoading) {
     return (
-      <div className="h-full flex flex-col">
-        <div className="flex justify-between items-center h-[49px] px-4 border-b">
+      <div className="flex h-full flex-col">
+        <div className="flex h-[49px] items-center justify-between border-b px-4">
           <p className="text-lg font-bold">Profile</p>
 
           <Button onClick={onClose} size="iconSm" variant="ghost">
@@ -116,8 +116,8 @@ export const Profile = ({ memberId, onClose }: ProfileProps) => {
 
   if (!member || !currentMember) {
     return (
-      <div className="h-full flex flex-col">
-        <div className="flex justify-between items-center h-[49px] px-4 border-b">
+      <div className="flex h-full flex-col">
+        <div className="flex h-[49px] items-center justify-between border-b px-4">
           <p className="text-lg font-bold">Profile</p>
 
           <Button onClick={onClose} size="iconSm" variant="ghost">
@@ -125,7 +125,7 @@ export const Profile = ({ memberId, onClose }: ProfileProps) => {
           </Button>
         </div>
 
-        <div className="flex flex-col gap-y-2 h-full items-center justify-center">
+        <div className="flex h-full flex-col items-center justify-center gap-y-2">
           <AlertTriangle className="size-5 text-muted-foreground" />
           <p className="text-sm text-muted-foreground">Profile not found.</p>
         </div>
@@ -141,8 +141,8 @@ export const Profile = ({ memberId, onClose }: ProfileProps) => {
       <UpdateDialog />
       <RemoveDialog />
 
-      <div className="h-full flex flex-col">
-        <div className="flex justify-between items-center h-[49px] px-4 border-b">
+      <div className="flex h-full flex-col">
+        <div className="flex h-[49px] items-center justify-between border-b px-4">
           <p className="text-lg font-bold">Profile</p>
 
           <Button onClick={onClose} size="iconSm" variant="ghost">
@@ -151,7 +151,7 @@ export const Profile = ({ memberId, onClose }: ProfileProps) => {
         </div>
 
         <div className="flex flex-col items-center justify-center p-4">
-          <Avatar className="max-w-[256px] max-h-[256px] size-full">
+          <Avatar className="size-full max-h-[256px] max-w-[256px]">
             <AvatarImage src={member.user.image} />
 
             <AvatarFallback className="aspect-square text-6xl">{avatarFallback}</AvatarFallback>
@@ -162,11 +162,11 @@ export const Profile = ({ memberId, onClose }: ProfileProps) => {
           <p className="text-xl font-bold">{member.user.name}</p>
 
           {currentMember.role === 'admin' && currentMember._id !== memberId ? (
-            <div className="flex items-center gap-2 mt-4">
+            <div className="mt-4 flex items-center gap-2">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="outline" className="w-full capitalize">
-                    {member.role} <ChevronDown className="size-4 ml-2" />
+                    {member.role} <ChevronDown className="ml-2 size-4" />
                   </Button>
                 </DropdownMenuTrigger>
 
@@ -194,17 +194,17 @@ export const Profile = ({ memberId, onClose }: ProfileProps) => {
         <Separator />
 
         <div className="flex flex-col p-4">
-          <p className="text-sm font-bold mb-4">Contact information</p>
+          <p className="mb-4 text-sm font-bold">Contact information</p>
 
           <div className="flex items-center gap-2">
-            <div className="size-9 rounded-md bg-muted flex items-center justify-center">
+            <div className="flex size-9 items-center justify-center rounded-md bg-muted">
               <MailIcon className="size-4" />
             </div>
 
             <div className="flex flex-col">
               <p className="text-[13px] font-semibold text-muted-foreground">Email Address</p>
 
-              <Link href={`mailto:${member.user.email}`} className="text-sm hover:underline text-[#1264a3]">
+              <Link href={`mailto:${member.user.email}`} className="text-sm text-[#1264a3] hover:underline">
                 {member.user.email}
               </Link>
             </div>

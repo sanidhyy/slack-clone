@@ -153,7 +153,7 @@ const Editor = ({
 
       <div
         className={cn(
-          'flex flex-col border border-slate-200 rounded-md overflow-hidden focus-within:border-slate-300 focus-within:shadow-sm transition bg-white',
+          'flex flex-col overflow-hidden rounded-md border border-slate-200 bg-white transition focus-within:border-slate-300 focus-within:shadow-sm',
           disabled && 'opacity-50',
         )}
       >
@@ -161,7 +161,7 @@ const Editor = ({
 
         {!!image && (
           <div className="p-2">
-            <div className="relative size-[62px] flex items-center justify-center group/image">
+            <div className="group/image relative flex size-[62px] items-center justify-center">
               <Hint label="Remove image">
                 <button
                   onClick={() => {
@@ -169,7 +169,7 @@ const Editor = ({
 
                     imageElementRef.current!.value = '';
                   }}
-                  className="hidden group-hover/image:flex rounded-full bg-black/70 hover:bg-black absolute -top-2.5 -right-2.5 text-white size-6 z-[4] border-2 border-white items-center justify-center"
+                  className="absolute -right-2.5 -top-2.5 z-[4] hidden size-6 items-center justify-center rounded-full border-2 border-white bg-black/70 text-white hover:bg-black group-hover/image:flex"
                 >
                   <XIcon className="size-3.5" />
                 </button>
@@ -179,13 +179,13 @@ const Editor = ({
                 src={URL.createObjectURL(image)}
                 alt="Uploaded image"
                 fill
-                className="rounded-xl overflow-hidden border object-cover"
+                className="overflow-hidden rounded-xl border object-cover"
               />
             </div>
           </div>
         )}
 
-        <div className="flex px-2 pb-2 z-[5]">
+        <div className="z-[5] flex px-2 pb-2">
           <Hint label={isToolbarVisible ? 'Hide formatting' : 'Show formatting'}>
             <Button disabled={disabled} size="iconSm" variant="ghost" onClick={toggleToolbar}>
               <PiTextAa className="size-4" />
@@ -223,7 +223,7 @@ const Editor = ({
                   });
                 }}
                 size="sm"
-                className="bg-[#007a5a] hover:bg-[#007a5a]/80 text-white"
+                className="bg-[#007a5a] text-white hover:bg-[#007a5a]/80"
               >
                 Save
               </Button>
@@ -244,7 +244,7 @@ const Editor = ({
               }}
               className={cn(
                 'ml-auto',
-                isEmpty ? 'bg-white hover:bg-white/80 text-muted-foreground' : 'bg-[#007a5a] hover:bg-[#007a5a]/80 text-white',
+                isEmpty ? 'bg-white text-muted-foreground hover:bg-white/80' : 'bg-[#007a5a] text-white hover:bg-[#007a5a]/80',
               )}
               size="iconSm"
             >
@@ -255,7 +255,7 @@ const Editor = ({
       </div>
 
       {variant === 'create' && (
-        <div className={cn('p-2 text-[10px] text-muted-foreground flex justify-end opacity-0 transition', !isEmpty && 'opacity-100')}>
+        <div className={cn('flex justify-end p-2 text-[10px] text-muted-foreground opacity-0 transition', !isEmpty && 'opacity-100')}>
           <p>
             <strong>Shift + {isIOS ? 'Return' : 'Enter'}</strong> to add a new line.
           </p>

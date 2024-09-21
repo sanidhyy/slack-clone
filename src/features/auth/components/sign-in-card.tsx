@@ -47,7 +47,7 @@ export const SignInCard = ({ setState }: SignInCardProps) => {
       </CardHeader>
 
       {!!error && (
-        <div className="bg-destructive/15 p-3 rounded-md flex items-center gap-x-2 text-sm text-destructive mb-6">
+        <div className="mb-6 flex items-center gap-x-2 rounded-md bg-destructive/15 p-3 text-sm text-destructive">
           <TriangleAlert className="size-4" />
           <p>{error}</p>
         </div>
@@ -74,23 +74,23 @@ export const SignInCard = ({ setState }: SignInCardProps) => {
         <Separator />
 
         <div className="flex flex-col gap-y-2.5">
-          <Button disabled={pending} onClick={() => handleOAuthSignIn('google')} variant="outline" size="lg" className="w-full relative">
-            <FcGoogle className="size-5 absolute left-2.5 top-3" />
+          <Button disabled={pending} onClick={() => handleOAuthSignIn('google')} variant="outline" size="lg" className="relative w-full">
+            <FcGoogle className="absolute left-2.5 top-3 size-5" />
             Continue with Google
           </Button>
 
-          <Button disabled={pending} onClick={() => handleOAuthSignIn('github')} variant="outline" size="lg" className="w-full relative">
-            <FaGithub className="size-5 absolute left-2.5 top-3" />
+          <Button disabled={pending} onClick={() => handleOAuthSignIn('github')} variant="outline" size="lg" className="relative w-full">
+            <FaGithub className="absolute left-2.5 top-3 size-5" />
             Continue with GitHub
           </Button>
         </div>
 
-        <p className="text-xs text-muted-foreground text-center">
+        <p className="text-center text-xs text-muted-foreground">
           Don&apos;t have an account?{' '}
           <button
             disabled={pending}
             onClick={() => setState('signUp')}
-            className="text-sky-700 disabled:pointer-events-none disabled:opacity-50 font-medium hover:underline cursor-pointer"
+            className="cursor-pointer font-medium text-sky-700 hover:underline disabled:pointer-events-none disabled:opacity-50"
           >
             Sign up
           </button>

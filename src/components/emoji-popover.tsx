@@ -31,12 +31,12 @@ export const EmojiPopover = ({ children, hint = 'Emoji', onEmojiSelect }: PropsW
             <TooltipTrigger asChild>{children}</TooltipTrigger>
           </PopoverTrigger>
 
-          <TooltipContent className="bg-black text-white border border-white/5">
-            <p className="font-medium text-xs">{hint}</p>
+          <TooltipContent className="border border-white/5 bg-black text-white">
+            <p className="text-xs font-medium">{hint}</p>
           </TooltipContent>
         </Tooltip>
 
-        <PopoverContent className="p-0 w-full border-none shadow-none">
+        <PopoverContent className="w-full border-none p-0 shadow-none">
           <EmojiPicker onEmojiClick={onSelect} />
         </PopoverContent>
       </Popover>

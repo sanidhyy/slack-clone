@@ -88,8 +88,8 @@ export const PreferencesModal = ({ open, setOpen, initialValue }: PreferencesMod
       <ConfirmDialog />
 
       <Dialog open={open || isUpdatingWorkspace || isRemovingWorkspace} onOpenChange={setOpen}>
-        <DialogContent className="p-0 bg-gray-50 overflow-hidden">
-          <DialogHeader className="p-4 border-b bg-white">
+        <DialogContent className="overflow-hidden bg-gray-50 p-0">
+          <DialogHeader className="border-b bg-white p-4">
             <DialogTitle>{value}</DialogTitle>
           </DialogHeader>
 
@@ -97,17 +97,17 @@ export const PreferencesModal = ({ open, setOpen, initialValue }: PreferencesMod
             <DialogDescription>Your workspace preferences</DialogDescription>
           </VisuallyHidden.Root>
 
-          <div className="px-4 pb-4 flex flex-col gap-y-2">
+          <div className="flex flex-col gap-y-2 px-4 pb-4">
             <Dialog open={editOpen || isUpdatingWorkspace} onOpenChange={setEditOpen}>
               <DialogTrigger asChild>
                 <button
                   disabled={isUpdatingWorkspace || isRemovingWorkspace}
-                  className="flex flex-col disabled:pointer-events-none disabled:opacity-50 w-full px-5 py-4 bg-white rounded-lg border cursor-pointer hover:bg-gray-50"
+                  className="flex w-full cursor-pointer flex-col rounded-lg border bg-white px-5 py-4 hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50"
                 >
-                  <div className="flex items-center justify-between w-full">
+                  <div className="flex w-full items-center justify-between">
                     <p className="text-sm font-semibold">Workspace name</p>
 
-                    <p className="text-sm text-[#1264A3] hover:underline cursor-pointer font-semibold">Edit</p>
+                    <p className="cursor-pointer text-sm font-semibold text-[#1264A3] hover:underline">Edit</p>
                   </div>
 
                   <p className="text-sm">{value}</p>
@@ -151,7 +151,7 @@ export const PreferencesModal = ({ open, setOpen, initialValue }: PreferencesMod
             <button
               disabled={isRemovingWorkspace}
               onClick={handleRemove}
-              className="flex items-center disabled:pointer-events-none disabled:opacity-50 gap-x-2 px-5 py-4 bg-white rounded-lg cursor-pointer border hover:bg-gray-50 text-rose-600"
+              className="flex cursor-pointer items-center gap-x-2 rounded-lg border bg-white px-5 py-4 text-rose-600 hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50"
             >
               <Trash className="size-4" />
               <p className="text-sm font-semibold">Delete workspace</p>

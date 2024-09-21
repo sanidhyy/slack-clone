@@ -19,7 +19,7 @@ export const ThreadBar = ({ count, image, name = 'Member', timestamp, onClick }:
   return (
     <button
       onClick={onClick}
-      className="p-1 rounded-md hover:bg-white border border-transparent hover:border-border flex items-center justify-start group/thread-bar transition max-w-[600px]"
+      className="group/thread-bar flex max-w-[600px] items-center justify-start rounded-md border border-transparent p-1 transition hover:border-border hover:bg-white"
     >
       <div className="flex items-center gap-2 overflow-hidden">
         <Avatar className="size-6 shrink-0">
@@ -28,18 +28,18 @@ export const ThreadBar = ({ count, image, name = 'Member', timestamp, onClick }:
           <AvatarFallback>{avatarFallback}</AvatarFallback>
         </Avatar>
 
-        <span className="text-xs text-sky-700 hover:underline font-bold truncate">
+        <span className="truncate text-xs font-bold text-sky-700 hover:underline">
           {count} {count > 1 ? 'replies' : 'reply'}
         </span>
 
-        <span className="text-xs text-muted-foreground truncate group-hover/thread-bar:hidden block">
+        <span className="block truncate text-xs text-muted-foreground group-hover/thread-bar:hidden">
           Last reply {formatDistanceToNow(timestamp, { addSuffix: true })}
         </span>
 
-        <span className="text-xs text-muted-foreground truncate group-hover/thread-bar:block hidden">View thread</span>
+        <span className="hidden truncate text-xs text-muted-foreground group-hover/thread-bar:block">View thread</span>
       </div>
 
-      <ChevronRight className="size-4 text-muted-foreground ml-auto opacity-0 group-hover/thread-bar:opacity-100 transition shrink-0" />
+      <ChevronRight className="ml-auto size-4 shrink-0 text-muted-foreground opacity-0 transition group-hover/thread-bar:opacity-100" />
     </button>
   );
 };

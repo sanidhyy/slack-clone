@@ -33,13 +33,13 @@ export const UserItem = ({ id, label = 'Member', image, variant }: UserItemProps
   return (
     <Button variant="transparent" className={cn(userItemVariants({ variant }))} size="sm" asChild>
       <Link href={`/workspace/${workspaceId}/member/${id}`}>
-        <Avatar className="size-5 mr-1">
+        <Avatar className="mr-1 size-5">
           <AvatarImage alt={label} src={image} />
 
           <AvatarFallback className="text-xs">{avatarFallback}</AvatarFallback>
         </Avatar>
 
-        <span className="text-sm truncate">{label}</span>
+        <span className="truncate text-sm">{label}</span>
       </Link>
     </Button>
   );

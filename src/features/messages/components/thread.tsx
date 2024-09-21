@@ -19,7 +19,7 @@ import { useWorkspaceId } from '@/hooks/use-workspace-id';
 const Editor = dynamic(() => import('@/components/editor'), {
   ssr: false,
   loading: () => (
-    <div className="h-full flex items-center justify-center">
+    <div className="flex h-full items-center justify-center">
       <Loader className="size-6 animate-spin text-muted-foreground" />
     </div>
   ),
@@ -137,8 +137,8 @@ export const Thread = ({ messageId, onClose }: ThreadProps) => {
 
   if (isMessageLoading || status === 'LoadingFirstPage') {
     return (
-      <div className="h-full flex flex-col">
-        <div className="flex justify-between items-center h-[49px] px-4 border-b">
+      <div className="flex h-full flex-col">
+        <div className="flex h-[49px] items-center justify-between border-b px-4">
           <p className="text-lg font-bold">Thread</p>
 
           <Button onClick={onClose} size="iconSm" variant="ghost">
@@ -155,8 +155,8 @@ export const Thread = ({ messageId, onClose }: ThreadProps) => {
 
   if (!message) {
     return (
-      <div className="h-full flex flex-col">
-        <div className="flex justify-between items-center h-[49px] px-4 border-b">
+      <div className="flex h-full flex-col">
+        <div className="flex h-[49px] items-center justify-between border-b px-4">
           <p className="text-lg font-bold">Thread</p>
 
           <Button onClick={onClose} size="iconSm" variant="ghost">
@@ -164,7 +164,7 @@ export const Thread = ({ messageId, onClose }: ThreadProps) => {
           </Button>
         </div>
 
-        <div className="flex flex-col gap-y-2 h-full items-center justify-center">
+        <div className="flex h-full flex-col items-center justify-center gap-y-2">
           <AlertTriangle className="size-5 text-muted-foreground" />
           <p className="text-sm text-muted-foreground">Message not found.</p>
         </div>
@@ -173,8 +173,8 @@ export const Thread = ({ messageId, onClose }: ThreadProps) => {
   }
 
   return (
-    <div className="h-full flex flex-col">
-      <div className="flex justify-between items-center h-[49px] px-4 border-b">
+    <div className="flex h-full flex-col">
+      <div className="flex h-[49px] items-center justify-between border-b px-4">
         <p className="text-lg font-bold">Thread</p>
 
         <Button onClick={onClose} size="iconSm" variant="ghost">
@@ -182,13 +182,13 @@ export const Thread = ({ messageId, onClose }: ThreadProps) => {
         </Button>
       </div>
 
-      <div className="flex-1 flex flex-col-reverse pb-4 overflow-y-auto messages-scrollbar">
+      <div className="messages-scrollbar flex flex-1 flex-col-reverse overflow-y-auto pb-4">
         {Object.entries(groupedMessages || {}).map(([dateKey, messages]) => (
           <div key={dateKey}>
-            <div className="text-center my-2 relative">
-              <hr className="absolute top-1/2 left-0 right-0 border-t border-gray-300" />
+            <div className="relative my-2 text-center">
+              <hr className="absolute left-0 right-0 top-1/2 border-t border-gray-300" />
 
-              <span className="relative inline-block bg-white px-4 py-1 rounded-full text-xs border border-gray-300 shadow-sm">
+              <span className="relative inline-block rounded-full border border-gray-300 bg-white px-4 py-1 text-xs shadow-sm">
                 {formatDateLabel(dateKey)}
               </span>
             </div>
@@ -246,10 +246,10 @@ export const Thread = ({ messageId, onClose }: ThreadProps) => {
         />
 
         {isLoadingMore && (
-          <div className="text-center my-2 relative">
-            <hr className="absolute top-1/2 left-0 right-0 border-t border-gray-300" />
+          <div className="relative my-2 text-center">
+            <hr className="absolute left-0 right-0 top-1/2 border-t border-gray-300" />
 
-            <span className="relative inline-block bg-white px-4 py-1 rounded-full text-xs border border-gray-300 shadow-sm">
+            <span className="relative inline-block rounded-full border border-gray-300 bg-white px-4 py-1 text-xs shadow-sm">
               <Loader className="size-4 animate-spin" />
             </span>
           </div>

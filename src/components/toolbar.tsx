@@ -25,8 +25,8 @@ export const Toolbar = ({
   hideThreadButton,
 }: ToolbarProps) => {
   return (
-    <div className="absolute top-0 right-5">
-      <div className="group-hover:opacity-100 opacity-0 transition-opacity border bg-white rounded-md shadow-sm">
+    <div className="absolute right-5 top-0">
+      <div className="rounded-md border bg-white opacity-0 shadow-sm transition-opacity group-hover:opacity-100">
         <EmojiPopover hint="Add reaction" onEmojiSelect={handleReaction}>
           <Button variant="ghost" size="iconSm" disabled={isPending}>
             <Smile className="size-4" />

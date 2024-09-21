@@ -96,19 +96,19 @@ export const Header = ({ channelName }: HeaderProps) => {
   };
 
   return (
-    <div className="bg-white border-b h-[49px] flex items-center px-4 overflow-hidden">
+    <div className="flex h-[49px] items-center overflow-hidden border-b bg-white px-4">
       <ConfirmDialog />
 
       <Dialog>
         <DialogTrigger asChild>
-          <Button disabled={memberLoading} variant="ghost" className="text-lg font-semibold px-2 overflow-hidden w-auto" size="sm">
+          <Button disabled={memberLoading} variant="ghost" className="w-auto overflow-hidden px-2 text-lg font-semibold" size="sm">
             <span className="truncate"># {channelName}</span>
-            <FaChevronDown className="size-2.5 ml-2" />
+            <FaChevronDown className="ml-2 size-2.5" />
           </Button>
         </DialogTrigger>
 
-        <DialogContent className="p-0 bg-gray-50 overflow-hidden">
-          <DialogHeader className="p-4 border-b bg-white">
+        <DialogContent className="overflow-hidden bg-gray-50 p-0">
+          <DialogHeader className="border-b bg-white p-4">
             <DialogTitle># {channelName}</DialogTitle>
 
             <VisuallyHidden.Root>
@@ -116,16 +116,16 @@ export const Header = ({ channelName }: HeaderProps) => {
             </VisuallyHidden.Root>
           </DialogHeader>
 
-          <div className="px-4 pb-4 flex flex-col gap-y-2">
+          <div className="flex flex-col gap-y-2 px-4 pb-4">
             <Dialog open={editOpen || isUpdatingChannel} onOpenChange={handleEditOpen}>
               <DialogTrigger asChild>
                 <button
                   disabled={isUpdatingChannel}
-                  className="flex flex-col disabled:pointer-events-none disabled:opacity-50 w-full px-5 py-4 bg-white rounded-lg border cursor-pointer hover:bg-gray-50"
+                  className="flex w-full cursor-pointer flex-col rounded-lg border bg-white px-5 py-4 hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50"
                 >
-                  <div className="flex items-center justify-between w-full">
+                  <div className="flex w-full items-center justify-between">
                     <p className="text-sm font-semibold">Channel name</p>
-                    {member?.role === 'admin' && <p className="text-sm text-[#1264A3] hover:underline font-semibold">Edit</p>}
+                    {member?.role === 'admin' && <p className="text-sm font-semibold text-[#1264A3] hover:underline">Edit</p>}
                   </div>
 
                   <p className="text-sm"># {channelName}</p>
@@ -170,7 +170,7 @@ export const Header = ({ channelName }: HeaderProps) => {
               <button
                 onClick={handleDelete}
                 disabled={isRemovingChannel}
-                className="flex disabled:pointer-events-none disabled:opacity-50 items-center gap-x-2 px-5 py-4 bg-white rounded-lg cursor-pointer border hover:bg-gray-50 text-rose-600"
+                className="flex cursor-pointer items-center gap-x-2 rounded-lg border bg-white px-5 py-4 text-rose-600 hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50"
               >
                 <Trash className="size-4" />
                 <p className="text-sm font-semibold">Delete channel</p>

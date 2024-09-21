@@ -68,13 +68,13 @@ export const MessageList = ({
   );
 
   return (
-    <div className="flex-1 flex flex-col-reverse pb-4 overflow-y-auto messages-scrollbar">
+    <div className="messages-scrollbar flex flex-1 flex-col-reverse overflow-y-auto pb-4">
       {Object.entries(groupedMessages || {}).map(([dateKey, messages]) => (
         <div key={dateKey}>
-          <div className="text-center my-2 relative">
-            <hr className="absolute top-1/2 left-0 right-0 border-t border-gray-300" />
+          <div className="relative my-2 text-center">
+            <hr className="absolute left-0 right-0 top-1/2 border-t border-gray-300" />
 
-            <span className="relative inline-block bg-white px-4 py-1 rounded-full text-xs border border-gray-300 shadow-sm">
+            <span className="relative inline-block rounded-full border border-gray-300 bg-white px-4 py-1 text-xs shadow-sm">
               {formatDateLabel(dateKey)}
             </span>
           </div>
@@ -132,10 +132,10 @@ export const MessageList = ({
       />
 
       {isLoadingMore && (
-        <div className="text-center my-2 relative">
-          <hr className="absolute top-1/2 left-0 right-0 border-t border-gray-300" />
+        <div className="relative my-2 text-center">
+          <hr className="absolute left-0 right-0 top-1/2 border-t border-gray-300" />
 
-          <span className="relative inline-block bg-white px-4 py-1 rounded-full text-xs border border-gray-300 shadow-sm">
+          <span className="relative inline-block rounded-full border border-gray-300 bg-white px-4 py-1 text-xs shadow-sm">
             <Loader className="size-4 animate-spin" />
           </span>
         </div>

@@ -21,7 +21,7 @@ import { Toolbar } from './toolbar';
 const Renderer = dynamic(() => import('./renderer'), {
   ssr: false,
   loading: () => (
-    <div className="h-full flex items-center justify-center">
+    <div className="flex h-full items-center justify-center">
       <Loader className="size-6 animate-spin text-muted-foreground" />
     </div>
   ),
@@ -29,7 +29,7 @@ const Renderer = dynamic(() => import('./renderer'), {
 const Editor = dynamic(() => import('./editor'), {
   ssr: false,
   loading: () => (
-    <div className="h-full flex items-center justify-center">
+    <div className="flex h-full items-center justify-center">
       <Loader className="size-6 animate-spin text-muted-foreground" />
     </div>
   ),
@@ -148,14 +148,14 @@ export const Message = ({
 
         <div
           className={cn(
-            'flex flex-col gap-2 p-1.5 px-5 hover:bg-gray-100/60 group relative',
+            'group relative flex flex-col gap-2 p-1.5 px-5 hover:bg-gray-100/60',
             isEditing && 'bg-[#f2c74433] hover:bg-[#f2c74433]',
-            isRemovingMessage && 'bg-rose-500/50 transform transition-all scale-y-0 origin-bottom duration-200',
+            isRemovingMessage && 'origin-bottom scale-y-0 transform bg-rose-500/50 transition-all duration-200',
           )}
         >
           <div className="flex items-start gap-2">
             <Hint label={formatFullTime(new Date(createdAt))}>
-              <button className="text-sm text-muted-foreground opacity-0 group-hover:opacity-100 w-[40px] leading-[22px] text-center hover:underline">
+              <button className="w-[40px] text-center text-sm leading-[22px] text-muted-foreground opacity-0 hover:underline group-hover:opacity-100">
                 {format(new Date(createdAt), 'hh:mm')}
               </button>
             </Hint>
@@ -171,7 +171,7 @@ export const Message = ({
                 />
               </div>
             ) : (
-              <div className="flex flex-col w-full">
+              <div className="flex w-full flex-col">
                 <Renderer value={body} />
                 <Thumbnail url={image} />
 
@@ -211,9 +211,9 @@ export const Message = ({
 
       <div
         className={cn(
-          'flex flex-col gap-2 p-1.5 px-5 hover:bg-gray-100/60 group relative',
+          'group relative flex flex-col gap-2 p-1.5 px-5 hover:bg-gray-100/60',
           isEditing && 'bg-[#f2c74433] hover:bg-[#f2c74433]',
-          isRemovingMessage && 'bg-rose-500/50 transform transition-all scale-y-0 origin-bottom duration-200',
+          isRemovingMessage && 'origin-bottom scale-y-0 transform bg-rose-500/50 transition-all duration-200',
         )}
       >
         <div className="flex items-start gap-2">
@@ -236,7 +236,7 @@ export const Message = ({
               />
             </div>
           ) : (
-            <div className="flex flex-col w-full overflow-hidden">
+            <div className="flex w-full flex-col overflow-hidden">
               <div className="text-sm">
                 <button onClick={() => onOpenProfile(memberId)} className="font-bold text-primary hover:underline">
                   {authorName}

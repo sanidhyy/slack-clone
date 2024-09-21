@@ -44,18 +44,18 @@ const JoinWorkspaceIdPage = () => {
 
   if (isLoading || isMember) {
     return (
-      <div className="h-full flex items-center justify-center">
+      <div className="flex h-full items-center justify-center">
         <Loader className="size-6 animate-spin text-muted-foreground" />
       </div>
     );
   }
 
   return (
-    <div className="h-full flex flex-col gap-y-8 items-center justify-center bg-white p-8 rounded-lg shadow-md">
+    <div className="flex h-full flex-col items-center justify-center gap-y-8 rounded-lg bg-white p-8 shadow-md">
       <Image src="/logo.svg" alt="Logo" width={60} height={60} />
 
-      <div className="flex flex-col gap-y-4 items-center justify-center max-w-md">
-        <div className="flex flex-col gap-y-2 items-center justify-center">
+      <div className="flex max-w-md flex-col items-center justify-center gap-y-4">
+        <div className="flex flex-col items-center justify-center gap-y-2">
           <h1 className="text-2xl font-bold">Join {data?.name ?? 'Workspace'}</h1>
 
           <p className="text-md text-muted-foreground">Enter the workspace code to join.</p>
@@ -80,7 +80,7 @@ const JoinWorkspaceIdPage = () => {
       <div className="flex gap-x-4">
         <Button size="lg" variant="outline" asChild>
           <Link href="/">
-            <Undo2 className="size-4 mr-2" /> Back to home
+            <Undo2 className="mr-2 size-4" /> Back to home
           </Link>
         </Button>
       </div>
