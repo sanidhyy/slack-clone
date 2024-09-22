@@ -1,6 +1,6 @@
 {
   "name": "slack-clone",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,6 +11,68 @@
     "format": "prettier --check . --config .prettierrc.mjs",
     "format:fix": "prettier --write . --config .prettierrc.mjs"
   },
+  "author": {
+    "name": "Sanidhya Kumar Verma",
+    "email": "sanidhya.verma12345@gmail.com",
+    "url": "https://github.com/sanidhyy"
+  },
+  "description": "Collaborate with your team using real-time messaging in this Slack clone built with Next.js, Convex, and Shadcn UI.",
+  "keywords": [
+    "reactjs",
+    "nextjs",
+    "convex",
+    "next-auth",
+    "emoji-picker-react",
+    "lucide-icons",
+    "react-icons",
+    "quill-editor",
+    "shadcn-ui",
+    "radix-ui",
+    "tailwindcss",
+    "nuqs",
+    "sonner",
+
+    "typescript",
+    "javascript",
+    "vercel",
+    "postcss",
+    "prettier",
+    "eslint",
+    "react-dom",
+    "html",
+    "css",
+
+    "state-management",
+    "real-time-messaging",
+    "collaboration",
+    "ui/ux",
+    "slack-clone",
+
+    "date-fns",
+    "cn",
+    "clsx",
+    "lucide-react"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanidhyy/slack-clone.git"
+  },
+  "homepage": "https://github.com/sanidhyy/slack-clone#readme",
+  "bugs": {
+    "url": "https://github.com/sanidhyy/slack-clone/issues",
+    "email": "sanidhya.verma12345@gmail.com"
+  },
+  "funding": [
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/sanidhy"
+    },
+    {
+      "type": "Buy me a coffee",
+      "url": "https://www.buymeacoffee.com/sanidhy"
+    }
+  ],
   "dependencies": {
     "@auth/core": "^0.34.2",
     "@convex-dev/auth": "^0.0.65",
