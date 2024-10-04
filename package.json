@@ -93,7 +93,7 @@
     "emoji-picker-react": "^4.12.0",
     "jotai": "^2.9.3",
     "lucide-react": "^0.439.0",
-    "next": "14.2.8",
+    "next": "14.2.10",
     "next-themes": "^0.3.0",
     "nuqs": "^1.19.1",
     "quill": "^2.0.2",
