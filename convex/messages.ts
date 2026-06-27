@@ -306,3 +306,79 @@ export const remove = mutation({
     return args.id;
   },
 });
+
+export const getUnreadCount = query({
+  args: {
+    workspaceId: v.id('workspaces'),
+  },
+  handler: async (ctx, args) => {
+    const userId = await getAuthUserId(ctx);
+
+    if (!userId) return 0;
+
+    const currentMember = await getMember(ctx, args.workspaceId, userId);
+
+    if (!currentMember) return 0;
+
+    const conversations = await ctx.db
+      .query('conversations')
+      .withIndex('by_workspace_id', (q) => q.eq('workspaceId', args.workspaceId))
+      .collect();
+
+    const memberConversations = conversations.filter(
+      (c) => c.memberOneId === currentMember._id || c.memberTwoId === currentMember._id,
+    );
+
+    let totalUnread = 0;
+
+    for (const conversation of memberConversations) {
+      const lastReadTime = conversation.lastRead?.[currentMember._id] ?? 0;
+
+      const unreadMessages = await ctx.db
+        .query('messages')
+        .withIndex('by_conversation_id', (q) => q.eq('conversationId', conversation._id))
+        .filter((q) =>
+          q.and(
+            q.gt(q.field('_creationTime'), lastReadTime),
+            q.neq(q.field('memberId'), currentMember._id),
+          ),
+        )
+        .collect();
+
+      totalUnread += unreadMessages.length;
+    }
+
+    return totalUnread;
+  },
+});
+
+export const markConversationRead = mutation({
+  args: {
+    conversationId: v.id('conversations'),
+    workspaceId: v.id('workspaces'),
+  },
+  handler: async (ctx, args) => {
+    const userId = await getAuthUserId(ctx);
+
+    if (!userId) throw new Error('Unauthorized.');
+
+    const currentMember = await getMember(ctx, args.workspaceId, userId);
+
+    if (!currentMember) throw new Error('Unauthorized.');
+
+    const conversation = await ctx.db.get(args.conversationId);
+
+    if (!conversation) throw new Error('Conversation not found.');
+
+    if (conversation.memberOneId !== currentMember._id && conversation.memberTwoId !== currentMember._id) {
+      throw new Error('Unauthorized.');
+    }
+
+    const updatedLastRead = {
+      ...(conversation.lastRead ?? {}),
+      [currentMember._id]: Date.now(),
+    };
+
+    await ctx.db.patch(args.conversationId, { lastRead: updatedLastRead });
+  },
+});

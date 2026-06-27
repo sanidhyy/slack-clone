@@ -98,11 +98,11 @@ export const Toolbar = () => {
       </div>
 
       <div className="ml-auto flex flex-1 items-center justify-end">
-        <Button variant="transparent" size="iconSm" asChild>
+        {/*<Button variant="transparent" size="iconSm" asChild>
           <Link href={links.sourceCode} target="_blank" rel="noreferrer noopener" title="Source Code">
             <FaGithub className="size-5 text-white" />
           </Link>
-        </Button>
+        </Button>*/}
       </div>
     </nav>
   );

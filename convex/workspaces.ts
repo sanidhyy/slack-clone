@@ -199,6 +199,81 @@ export const update = mutation({
   },
 });
 
+export const inviteByEmail = mutation({
+  args: {
+    workspaceId: v.id('workspaces'),
+    email: v.string(),
+  },
+  handler: async (ctx, args) => {
+    const userId = await getAuthUserId(ctx);
+
+    if (!userId) throw new Error('Unauthorized.');
+
+    const currentMember = await ctx.db
+      .query('members')
+      .withIndex('by_workspace_id_user_id', (q) => q.eq('workspaceId', args.workspaceId).eq('userId', userId))
+      .unique();
+
+    if (!currentMember || currentMember.role !== 'admin') throw new Error('Unauthorized.');
+
+    const invitedUser = await ctx.db
+      .query('users')
+      .filter((q) => q.eq(q.field('email'), args.email.toLowerCase().trim()))
+      .first();
+
+    if (!invitedUser) return { status: 'not_found' as const };
+
+    const existingMember = await ctx.db
+      .query('members')
+      .withIndex('by_workspace_id_user_id', (q) => q.eq('workspaceId', args.workspaceId).eq('userId', invitedUser._id))
+      .unique();
+
+    if (existingMember) return { status: 'already_member' as const };
+
+    const newMemberId = await ctx.db.insert('members', {
+      userId: invitedUser._id,
+      workspaceId: args.workspaceId,
+      role: 'member',
+    });
+
+    const existingConversation = await ctx.db
+      .query('conversations')
+      .withIndex('by_workspace_id', (q) => q.eq('workspaceId', args.workspaceId))
+      .filter((q) =>
+        q.or(
+          q.and(q.eq(q.field('memberOneId'), currentMember._id), q.eq(q.field('memberTwoId'), newMemberId)),
+          q.and(q.eq(q.field('memberOneId'), newMemberId), q.eq(q.field('memberTwoId'), currentMember._id)),
+        ),
+      )
+      .unique();
+
+    const conversationId =
+      existingConversation?._id ??
+      (await ctx.db.insert('conversations', {
+        workspaceId: args.workspaceId,
+        memberOneId: currentMember._id,
+        memberTwoId: newMemberId,
+      }));
+
+    const workspace = await ctx.db.get(args.workspaceId);
+    const inviterUser = await ctx.db.get(userId);
+
+    const inviterName = inviterUser?.name ?? 'An admin';
+    const workspaceName = workspace?.name ?? 'the workspace';
+
+    await ctx.db.insert('messages', {
+      body: JSON.stringify({
+        ops: [{ insert: `👋 ${inviterName} has invited you to join ${workspaceName}. Welcome aboard!\n` }],
+      }),
+      memberId: currentMember._id,
+      workspaceId: args.workspaceId,
+      conversationId,
+    });
+
+    return { status: 'success' as const };
+  },
+});
+
 export const remove = mutation({
   args: {
     id: v.id('workspaces'),
