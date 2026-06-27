@@ -96,7 +96,7 @@ export const Header = ({ channelName }: HeaderProps) => {
   };
 
   return (
-    <div className="flex h-[49px] items-center overflow-hidden border-b bg-white px-4">
+    <div className="flex h-[49px] items-center overflow-hidden border-b bg-background px-4">
       <ConfirmDialog />
 
       <Dialog>
@@ -107,8 +107,8 @@ export const Header = ({ channelName }: HeaderProps) => {
           </Button>
         </DialogTrigger>
 
-        <DialogContent className="overflow-hidden bg-gray-50 p-0">
-          <DialogHeader className="border-b bg-white p-4">
+        <DialogContent className="overflow-hidden bg-muted/40 p-0">
+          <DialogHeader className="border-b bg-background p-4">
             <DialogTitle># {channelName}</DialogTitle>
 
             <VisuallyHidden.Root>
@@ -121,11 +121,11 @@ export const Header = ({ channelName }: HeaderProps) => {
               <DialogTrigger asChild>
                 <button
                   disabled={isUpdatingChannel}
-                  className="flex w-full cursor-pointer flex-col rounded-lg border bg-white px-5 py-4 hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50"
+                  className="flex w-full cursor-pointer flex-col rounded-lg border bg-background px-5 py-4 hover:bg-muted disabled:pointer-events-none disabled:opacity-50"
                 >
                   <div className="flex w-full items-center justify-between">
                     <p className="text-sm font-semibold">Channel name</p>
-                    {member?.role === 'admin' && <p className="text-sm font-semibold text-[#1264A3] hover:underline">Edit</p>}
+                    {member?.role === 'admin' && <p className="text-sm font-semibold text-[#1264A3] hover:underline dark:text-[#4d9de0]">Edit</p>}
                   </div>
 
                   <p className="text-sm"># {channelName}</p>
@@ -170,7 +170,7 @@ export const Header = ({ channelName }: HeaderProps) => {
               <button
                 onClick={handleDelete}
                 disabled={isRemovingChannel}
-                className="flex cursor-pointer items-center gap-x-2 rounded-lg border bg-white px-5 py-4 text-rose-600 hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50"
+                className="flex cursor-pointer items-center gap-x-2 rounded-lg border bg-background px-5 py-4 text-rose-600 hover:bg-muted disabled:pointer-events-none disabled:opacity-50"
               >
                 <Trash className="size-4" />
                 <p className="text-sm font-semibold">Delete channel</p>

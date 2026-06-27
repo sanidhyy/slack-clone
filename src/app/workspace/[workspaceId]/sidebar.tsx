@@ -17,7 +17,7 @@ export const Sidebar = () => {
   const { data: unreadCount } = useGetUnreadCount({ workspaceId });
 
   return (
-    <aside className="flex h-full w-[70px] flex-col items-center gap-y-4 bg-[#381349] pb-[4px] pt-[9px]">
+    <aside className="flex h-full w-[70px] flex-col items-center gap-y-4 bg-[var(--sidebar)] pb-[4px] pt-[9px]">
       <WorkspaceSwitcher />
 
       <SidebarButton icon={Home} label="Home" isActive={pathname.includes('/workspace')} />

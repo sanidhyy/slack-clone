@@ -21,14 +21,14 @@ export const WorkspaceSection = ({ children, hint, label, onNew }: PropsWithChil
   return (
     <div className="mt-3 flex flex-col px-2">
       <div className="group flex items-center px-3.5">
-        <Button onClick={toggle} variant="transparent" className="size-6 shrink-0 p-0.5 text-sm text-[#F9EDFFCC]">
+        <Button onClick={toggle} variant="transparent" className="size-6 shrink-0 p-0.5 text-sm text-[var(--workspace-sidebar-fg)]">
           <FaCaretDown className={cn('size-4 transition-transform', !on && '-rotate-90')} />
         </Button>
 
         <Button
           variant="transparent"
           size="sm"
-          className="group h-[28px] items-center justify-start overflow-hidden px-1.5 text-sm text-[#F9EDFFCC]"
+          className="group h-[28px] items-center justify-start overflow-hidden px-1.5 text-sm text-[var(--workspace-sidebar-fg)]"
         >
           <span className="truncate">{label}</span>
         </Button>
@@ -39,7 +39,7 @@ export const WorkspaceSection = ({ children, hint, label, onNew }: PropsWithChil
               onClick={onNew}
               variant="transparent"
               size="iconSm"
-              className="ml-auto size-6 shrink-0 p-0.5 text-sm text-[#F9EDFFCC] opacity-0 transition-opacity group-hover:opacity-100"
+              className="ml-auto size-6 shrink-0 p-0.5 text-sm text-[var(--workspace-sidebar-fg)] opacity-0 transition-opacity group-hover:opacity-100"
             >
               <PlusIcon className="size-5" />
             </Button>

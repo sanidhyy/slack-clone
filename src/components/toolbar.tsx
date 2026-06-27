@@ -26,7 +26,7 @@ export const Toolbar = ({
 }: ToolbarProps) => {
   return (
     <div className="absolute right-5 top-0">
-      <div className="rounded-md border bg-white opacity-0 shadow-sm transition-opacity group-hover:opacity-100">
+      <div className="rounded-md border bg-background opacity-0 shadow-sm transition-opacity group-hover:opacity-100">
         <EmojiPopover hint="Add reaction" onEmojiSelect={handleReaction}>
           <Button variant="ghost" size="iconSm" disabled={isPending}>
             <Smile className="size-4" />

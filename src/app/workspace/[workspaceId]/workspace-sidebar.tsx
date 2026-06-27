@@ -32,23 +32,23 @@ export const WorkspaceSidebar = () => {
 
   if (memberLoading || workspaceLoading || channelsLoading || membersLoading) {
     return (
-      <div className="flex h-full flex-col items-center justify-center bg-[#5E2C5F]">
-        <Loader className="size-5 animate-spin text-white" />
+      <div className="flex h-full flex-col items-center justify-center bg-[var(--workspace-sidebar)]">
+        <Loader className="size-5 animate-spin text-[var(--workspace-sidebar-fg)]" />
       </div>
     );
   }
 
   if (!workspace || !member) {
     return (
-      <div className="flex h-full flex-col items-center justify-center gap-y-2 bg-[#5E2C5F]">
-        <AlertTriangle className="size-5 text-white" />
-        <p className="text-sm text-white">Workspace not found.</p>
+      <div className="flex h-full flex-col items-center justify-center gap-y-2 bg-[var(--workspace-sidebar)]">
+        <AlertTriangle className="size-5 text-[var(--workspace-sidebar-fg)]" />
+        <p className="text-sm text-[var(--workspace-sidebar-fg)]">Workspace not found.</p>
       </div>
     );
   }
 
   return (
-    <div className="flex h-full flex-col gap-y-2 bg-[#5E2C5F]">
+    <div className="flex h-full flex-col gap-y-2 bg-[var(--workspace-sidebar)]">
       <WorkspaceHeader workspace={workspace} isAdmin={member.role === 'admin'} />
 
       {channels && channels.length !== 0 && (

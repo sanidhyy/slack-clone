@@ -69,7 +69,7 @@ export const WorkspaceSwitcher = () => {
 
         <DropdownMenuSeparator />
         <DropdownMenuItem className="cursor-pointer" onClick={() => setOpen(true)}>
-          <div className="relative mr-2 flex size-9 items-center justify-center overflow-hidden rounded-md bg-[#F2F2F2] text-xl font-semibold text-slate-800">
+          <div className="relative mr-2 flex size-9 items-center justify-center overflow-hidden rounded-md bg-muted text-xl font-semibold text-foreground">
             <Plus />
           </div>
           Create a new workspace

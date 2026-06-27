@@ -154,7 +154,7 @@ const Editor = ({
 
       <div
         className={cn(
-          'flex flex-col overflow-hidden rounded-md border border-slate-200 bg-white transition focus-within:border-slate-300 focus-within:shadow-sm',
+          'flex flex-col overflow-hidden rounded-md border border-border bg-background transition focus-within:border-ring focus-within:shadow-sm',
           disabled && 'opacity-50',
         )}
       >
@@ -245,7 +245,7 @@ const Editor = ({
               }}
               className={cn(
                 'ml-auto',
-                isEmpty ? 'bg-white text-muted-foreground hover:bg-white/80' : 'bg-[#007a5a] text-white hover:bg-[#007a5a]/80',
+                isEmpty ? 'bg-background text-muted-foreground hover:bg-muted/80' : 'bg-[#007a5a] text-white hover:bg-[#007a5a]/80',
               )}
               size="iconSm"
             >

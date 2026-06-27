@@ -51,7 +51,7 @@ const JoinWorkspaceIdPage = () => {
   }
 
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-y-8 rounded-lg bg-white p-8 shadow-md">
+    <div className="flex h-full flex-col items-center justify-center gap-y-8 rounded-lg bg-background p-8 shadow-md">
       <Image src="/logo.svg" alt="Logo" width={60} height={60} />
 
       <div className="flex max-w-md flex-col items-center justify-center gap-y-4">
@@ -68,10 +68,10 @@ const JoinWorkspaceIdPage = () => {
           classNames={{
             container: cn('flex gap-x-2', isPending && 'opacity-50 cursor-not-allowed pointer-events-none'),
             character:
-              'uppercase h-auto rounded-md border border-gray-300 outline-rose-500 flex items-center justify-center text-lg font-medium text-gray-500',
+              'uppercase h-auto rounded-md border border-border outline-rose-500 flex items-center justify-center text-lg font-medium text-muted-foreground',
             characterInactive: 'bg-muted',
-            characterSelected: 'bg-white text-black',
-            characterFilled: 'bg-white text-black',
+            characterSelected: 'bg-background text-foreground',
+            characterFilled: 'bg-background text-foreground',
           }}
           autoFocus
         />

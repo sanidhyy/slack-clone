@@ -4,6 +4,10 @@
 
 @layer base {
   :root {
+    --sidebar: #381349;
+    --toolbar: #481349;
+    --workspace-sidebar: #5E2C5F;
+    --workspace-sidebar-fg: #F9EDFFCC;
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -31,6 +35,10 @@
     --radius: 0.5rem;
   }
   .dark {
+    --sidebar: #1e0930;
+    --toolbar: #2a0942;
+    --workspace-sidebar: #3b1a3d;
+    --workspace-sidebar-fg: #E8D5F5CC;
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
@@ -79,9 +87,17 @@
   background-color: #f8f8f8 !important;
 }
 
+.dark .ql-toolbar {
+  background-color: hsl(var(--muted)) !important;
+}
+
 .ql-toolbar .ql-formats:not(:last-child) {
   border-right: 1px solid #dcdcdc !important;
   padding-right: 12px !important;
+}
+
+.dark .ql-toolbar .ql-formats:not(:last-child) {
+  border-right: 1px solid hsl(var(--border)) !important;
 }
 
 .ql-container {
@@ -99,8 +115,16 @@
   font-size: 14px !important;
 }
 
+.dark .ql-editor {
+  color: hsl(var(--foreground)) !important;
+}
+
 .ql-editor a {
   color: #1264a3 !important;
+}
+
+.dark .ql-editor a {
+  color: #4d9de0 !important;
 }
 
 .ql-editor a:hover {
@@ -118,6 +142,28 @@
   @apply !truncate;
 }
 
+.dark .ql-editor:before {
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+.dark .ql-toolbar .ql-stroke {
+  stroke: hsl(var(--foreground)) !important;
+}
+
+.dark .ql-toolbar .ql-fill {
+  fill: hsl(var(--foreground)) !important;
+}
+
+.dark .ql-toolbar button:hover .ql-stroke,
+.dark .ql-toolbar button.ql-active .ql-stroke {
+  stroke: hsl(var(--primary)) !important;
+}
+
+.dark .ql-toolbar button:hover .ql-fill,
+.dark .ql-toolbar button.ql-active .ql-fill {
+  fill: hsl(var(--primary)) !important;
+}
+
 .ql-renderer {
   @apply !p-0;
 }
@@ -131,5 +177,9 @@
   .messages-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: #dcdcdc #f8f8f8;
+  }
+
+  .dark .messages-scrollbar {
+    scrollbar-color: hsl(var(--muted-foreground) / 0.3) hsl(var(--muted));
   }
 }

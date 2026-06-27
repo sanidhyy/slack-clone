@@ -135,7 +135,7 @@ export const ToField = ({ workspaceId, value, onChange }: ToFieldProps) => {
   return (
     <div ref={containerRef} className="relative">
       <div
-        className="flex min-h-[42px] flex-wrap items-center gap-1.5 rounded-md border border-slate-200 bg-white px-3 py-2 focus-within:border-slate-300 focus-within:shadow-sm"
+        className="flex min-h-[42px] flex-wrap items-center gap-1.5 rounded-md border border-border bg-background px-3 py-2 focus-within:border-ring focus-within:shadow-sm"
         onClick={() => inputRef.current?.focus()}
       >
         <span className="text-sm font-medium text-muted-foreground">To:</span>
@@ -143,7 +143,7 @@ export const ToField = ({ workspaceId, value, onChange }: ToFieldProps) => {
         {value.map((recipient, i) => (
           <span
             key={i}
-            className="flex items-center gap-1 rounded-md bg-[#1264a3]/10 px-2 py-0.5 text-sm font-medium text-[#1264a3]"
+            className="flex items-center gap-1 rounded-md bg-[#1264a3]/10 px-2 py-0.5 text-sm font-medium text-[#1264a3] dark:bg-[#4d9de0]/20 dark:text-[#4d9de0]"
           >
             {recipient.type === 'member' ? (
               <>
@@ -164,7 +164,7 @@ export const ToField = ({ workspaceId, value, onChange }: ToFieldProps) => {
                 e.stopPropagation();
                 removeRecipient(i);
               }}
-              className="ml-0.5 rounded-sm hover:text-[#1264a3]/60"
+              className="ml-0.5 rounded-sm hover:text-[#1264a3]/60 dark:hover:text-[#4d9de0]/60"
             >
               <X className="size-3" />
             </button>
@@ -186,7 +186,7 @@ export const ToField = ({ workspaceId, value, onChange }: ToFieldProps) => {
       </div>
 
       {showDropdown && (
-        <div className="absolute left-0 right-0 top-full z-10 mt-1 max-h-56 overflow-y-auto rounded-md border border-slate-200 bg-white shadow-md">
+        <div className="absolute left-0 right-0 top-full z-10 mt-1 max-h-56 overflow-y-auto rounded-md border border-border bg-background shadow-md">
           {suggestions.map((s, i) => (
             <button
               key={i}
@@ -196,7 +196,7 @@ export const ToField = ({ workspaceId, value, onChange }: ToFieldProps) => {
               }}
               onMouseEnter={() => setActiveIndex(i)}
               className={`flex w-full items-center gap-2.5 px-3 py-2 text-sm ${
-                i === activeIndex ? 'bg-slate-100' : 'hover:bg-slate-50'
+                i === activeIndex ? 'bg-muted' : 'hover:bg-muted/50'
               }`}
             >
               {s.kind === 'member' ? (
@@ -212,8 +212,8 @@ export const ToField = ({ workspaceId, value, onChange }: ToFieldProps) => {
                 </>
               ) : (
                 <>
-                  <div className="flex size-6 items-center justify-center rounded-sm bg-slate-200">
-                    <Hash className="size-3.5 text-slate-600" />
+                  <div className="flex size-6 items-center justify-center rounded-sm bg-muted">
+                    <Hash className="size-3.5 text-muted-foreground" />
                   </div>
                   <span className="font-medium">#{s.channel.name}</span>
                 </>

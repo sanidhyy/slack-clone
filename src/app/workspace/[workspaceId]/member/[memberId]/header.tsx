@@ -15,7 +15,7 @@ export const Header = ({ memberName = 'Member', memberImage, onClick }: HeaderPr
   const avatarFallback = memberName.charAt(0).toUpperCase();
 
   return (
-    <div className="flex h-[49px] items-center overflow-hidden border-b bg-white px-4">
+    <div className="flex h-[49px] items-center overflow-hidden border-b bg-background px-4">
       <Button variant="ghost" className="w-auto overflow-hidden px-2 text-lg font-semibold" size="sm" onClick={onClick}>
         <Avatar className="mr-2 size-6">
           <AvatarImage src={memberImage} />

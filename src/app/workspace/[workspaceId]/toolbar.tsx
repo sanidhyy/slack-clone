@@ -58,11 +58,11 @@ export const Toolbar = () => {
   }, []);
 
   return (
-    <nav className="flex h-10 items-center justify-between bg-[#481349] p-1.5">
+    <nav className="flex h-10 items-center justify-between bg-[var(--toolbar)] p-1.5">
       <div className="flex-1" aria-hidden />
 
       <div className="min-w-[280px] max-w-[642px] shrink grow-[2]">
-        <Button onClick={() => setOpen(true)} size="sm" className="h-7 w-full justify-start bg-accent/25 px-2 hover:bg-accent/25">
+        <Button onClick={() => setOpen(true)} size="sm" className="h-7 w-full justify-start bg-white/25 px-2 hover:bg-white/30">
           <Search className="mr-2 size-4 text-white" />
           <span className="text-xs text-white">Search {data?.name ?? 'workspace'}...</span>
 

@@ -94,7 +94,7 @@ const NewMessagePage = () => {
 
   return (
     <div className="flex h-full flex-col">
-      <div className="flex h-[49px] items-center overflow-hidden border-b bg-white px-4">
+      <div className="flex h-[49px] items-center overflow-hidden border-b bg-background px-4">
         <SquarePen className="mr-2 size-5 text-muted-foreground" />
         <span className="text-lg font-semibold">New message</span>
       </div>

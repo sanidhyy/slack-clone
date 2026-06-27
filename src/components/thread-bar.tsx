@@ -19,7 +19,7 @@ export const ThreadBar = ({ count, image, name = 'Member', timestamp, onClick }:
   return (
     <button
       onClick={onClick}
-      className="group/thread-bar flex max-w-[600px] items-center justify-start rounded-md border border-transparent p-1 transition hover:border-border hover:bg-white"
+      className="group/thread-bar flex max-w-[600px] items-center justify-start rounded-md border border-transparent p-1 transition hover:border-border hover:bg-background"
     >
       <div className="flex items-center gap-2 overflow-hidden">
         <Avatar className="size-6 shrink-0">
