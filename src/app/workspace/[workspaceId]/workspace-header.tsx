@@ -1,6 +1,7 @@
 'use client';
 
 import { ChevronDown, ListFilter, SquarePen } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 import { Doc } from '@/../convex/_generated/dataModel';
@@ -13,9 +14,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-
-import { useNewDmModal } from '@/features/members/store/use-new-dm-modal';
-
+import { useWorkspaceId } from '@/hooks/use-workspace-id';
 import { InviteModal } from './invite-modal';
 import { PreferencesModal } from './preferences-modal';
 
@@ -25,9 +24,10 @@ interface WorkspaceHeaderProps {
 }
 
 export const WorkspaceHeader = ({ workspace, isAdmin }: WorkspaceHeaderProps) => {
+  const router = useRouter();
+  const workspaceId = useWorkspaceId();
   const [preferencesOpen, setPreferencesOpen] = useState(false);
   const [inviteOpen, setInviteOpen] = useState(false);
-  const [_dmOpen, setDmOpen] = useNewDmModal();
 
   return (
     <>
@@ -81,7 +81,7 @@ export const WorkspaceHeader = ({ workspace, isAdmin }: WorkspaceHeaderProps) =>
           </Hint>
 
           <Hint label="New message" side="bottom">
-            <Button variant="transparent" size="iconSm" onClick={() => setDmOpen(true)}>
+            <Button variant="transparent" size="iconSm" onClick={() => router.push(`/workspace/${workspaceId}/new-message`)}>
               <SquarePen className="size-4" />
             </Button>
           </Hint>
