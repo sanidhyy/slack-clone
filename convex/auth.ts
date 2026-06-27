@@ -14,6 +14,7 @@ const CustomPassword = Password<DataModel>({
   },
 });
 
-export const { auth, signIn, signOut, store } = convexAuth({
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const { auth, signIn, signOut, store, isAuthenticated } = convexAuth({
   providers: [CustomPassword, GitHub, Google],
-});
+}) as any;

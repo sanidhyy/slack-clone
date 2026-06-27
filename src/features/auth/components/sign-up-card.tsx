@@ -1,5 +1,6 @@
 import { useAuthActions } from '@convex-dev/auth/react';
 import { TriangleAlert } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
@@ -17,6 +18,7 @@ interface SignUpCardProps {
 
 export const SignUpCard = ({ setState }: SignUpCardProps) => {
   const { signIn } = useAuthActions();
+  const router = useRouter();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -51,6 +53,7 @@ export const SignUpCard = ({ setState }: SignUpCardProps) => {
     setPending(true);
     setError('');
     signIn('password', { name, email, password, flow: 'signUp' })
+      .then(() => router.push('/'))
       .catch(() => {
         setError('Something went wrong!');
       })
