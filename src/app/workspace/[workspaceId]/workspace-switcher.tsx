@@ -40,23 +40,34 @@ export const WorkspaceSwitcher = () => {
           className="cursor-pointer flex-col items-start justify-start capitalize"
         >
           {workspace?.name}
-
           <span className="text-xs text-muted-foreground">Active workspace</span>
         </DropdownMenuItem>
 
-        {filteredWorkspaces?.map((workspace) => (
-          <DropdownMenuItem
-            key={workspace._id}
-            className="cursor-pointer overflow-hidden capitalize"
-            onClick={() => router.push(`/workspace/${workspace._id}`)}
-          >
-            <div className="relative mr-2 flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-md bg-[#616061] text-xl font-semibold text-white">
-              {workspace.name.charAt(0).toUpperCase()}
-            </div>
-            <p className="truncate">{workspace.name}</p>
+        {workspacesLoading ? (
+          <DropdownMenuItem disabled className="flex justify-center py-2">
+            <Loader className="size-4 animate-spin text-muted-foreground" />
           </DropdownMenuItem>
-        ))}
+        ) : (
+          filteredWorkspaces && filteredWorkspaces.length > 0 && (
+            <>
+              <DropdownMenuSeparator />
+              {filteredWorkspaces.map((workspace) => (
+                <DropdownMenuItem
+                  key={workspace._id}
+                  className="cursor-pointer overflow-hidden capitalize"
+                  onClick={() => router.push(`/workspace/${workspace._id}`)}
+                >
+                  <div className="relative mr-2 flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-md bg-[#616061] text-xl font-semibold text-white">
+                    {workspace.name.charAt(0).toUpperCase()}
+                  </div>
+                  <p className="truncate">{workspace.name}</p>
+                </DropdownMenuItem>
+              ))}
+            </>
+          )
+        )}
 
+        <DropdownMenuSeparator />
         <DropdownMenuItem className="cursor-pointer" onClick={() => setOpen(true)}>
           <div className="relative mr-2 flex size-9 items-center justify-center overflow-hidden rounded-md bg-[#F2F2F2] text-xl font-semibold text-slate-800">
             <Plus />
