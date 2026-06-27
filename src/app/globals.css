@@ -122,6 +122,11 @@
   @apply !p-0;
 }
 
+.ql-renderer .ql-code-block-container {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
 @layer utilities {
   .messages-scrollbar {
     scrollbar-width: thin;

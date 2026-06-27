@@ -33,6 +33,13 @@ const Renderer = ({ value }: RendererProps) => {
 
     container.innerHTML = quill.root.innerHTML;
 
+    container.querySelectorAll('.ql-ui').forEach((el) => el.remove());
+
+    container.querySelectorAll('a').forEach((a) => {
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener noreferrer');
+    });
+
     return () => {
       if (container) container.innerHTML = '';
     };
@@ -40,7 +47,11 @@ const Renderer = ({ value }: RendererProps) => {
 
   if (isEmpty) return null;
 
-  return <div ref={rendererRef} className="ql-editor ql-renderer" />;
+  return (
+    <div className="ql-snow">
+      <div ref={rendererRef} className="ql-editor ql-renderer" />
+    </div>
+  );
 };
 
 export default Renderer;
