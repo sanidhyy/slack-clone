@@ -1,5 +1,7 @@
-import { useQueryState } from 'nuqs';
+import { atom, useAtom } from 'jotai';
+
+const profileMemberIdAtom = atom<string | null>(null);
 
 export const useProfileMemberId = () => {
-  return useQueryState('profileMemberId');
+  return useAtom(profileMemberIdAtom);
 };

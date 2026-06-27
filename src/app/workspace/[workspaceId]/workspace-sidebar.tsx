@@ -1,6 +1,6 @@
 'use client';
 
-import { AlertTriangle, HashIcon, Loader, MessageSquareText, SendHorizonal } from 'lucide-react';
+import { AlertTriangle, HashIcon, Loader } from 'lucide-react';
 
 import { useGetChannels } from '@/features/channels/api/use-get-channels';
 import { useCreateChannelModal } from '@/features/channels/store/use-create-channel-modal';
@@ -48,12 +48,6 @@ export const WorkspaceSidebar = () => {
   return (
     <div className="flex h-full flex-col gap-y-2 bg-[#5E2C5F]">
       <WorkspaceHeader workspace={workspace} isAdmin={member.role === 'admin'} />
-
-      <div className="mt-3 flex flex-col px-2">
-        <SidebarItem label="Threads" icon={MessageSquareText} id="threads" />
-
-        <SidebarItem label="Drafts & Sent" icon={SendHorizonal} id="draft" />
-      </div>
 
       {channels && channels.length !== 0 && (
         <WorkspaceSection label="Channels" hint="New Channel" onNew={member.role === 'admin' ? () => setOpen(true) : undefined}>

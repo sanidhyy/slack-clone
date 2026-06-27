@@ -1,5 +1,7 @@
-import { useQueryState } from 'nuqs';
+import { atom, useAtom } from 'jotai';
+
+const parentMessageIdAtom = atom<string | null>(null);
 
 export const useParentMessageId = () => {
-  return useQueryState('parentMessageId');
+  return useAtom(parentMessageIdAtom);
 };
