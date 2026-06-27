@@ -125,7 +125,9 @@ export const Header = ({ channelName }: HeaderProps) => {
                 >
                   <div className="flex w-full items-center justify-between">
                     <p className="text-sm font-semibold">Channel name</p>
-                    {member?.role === 'admin' && <p className="text-sm font-semibold text-[#1264A3] hover:underline dark:text-[#4d9de0]">Edit</p>}
+                    {member?.role === 'admin' && (
+                      <p className="text-sm font-semibold text-[#1264A3] hover:underline dark:text-[#4d9de0]">Edit</p>
+                    )}
                   </div>
 
                   <p className="text-sm"># {channelName}</p>

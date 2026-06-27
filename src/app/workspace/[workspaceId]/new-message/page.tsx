@@ -2,8 +2,8 @@
 
 import { SquarePen } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { useRef, useState } from 'react';
 import type Quill from 'quill';
+import { useRef, useState } from 'react';
 import { toast } from 'sonner';
 
 import type { Id } from '@/../convex/_generated/dataModel';
@@ -13,7 +13,7 @@ import { useCreateMessage } from '@/features/messages/api/use-create-message';
 import { useGenerateUploadUrl } from '@/features/upload/api/use-generate-upload-url';
 import { useWorkspaceId } from '@/hooks/use-workspace-id';
 
-import { ToField, type Recipient } from './to-field';
+import { type Recipient, ToField } from './to-field';
 
 const NewMessagePage = () => {
   const router = useRouter();
@@ -62,20 +62,11 @@ const NewMessagePage = () => {
       await Promise.all(
         recipients.map(async (recipient) => {
           if (recipient.type === 'channel') {
-            await createMessage(
-              { workspaceId, channelId: recipient.id, body, image: imageId },
-              { throwError: true },
-            );
+            await createMessage({ workspaceId, channelId: recipient.id, body, image: imageId }, { throwError: true });
           } else {
-            const conversationId = await createOrGetConversation(
-              { workspaceId, memberId: recipient.id },
-              { throwError: true },
-            );
+            const conversationId = await createOrGetConversation({ workspaceId, memberId: recipient.id }, { throwError: true });
             if (!conversationId) throw new Error('Failed to create conversation.');
-            await createMessage(
-              { workspaceId, conversationId, body, image: imageId },
-              { throwError: true },
-            );
+            await createMessage({ workspaceId, conversationId, body, image: imageId }, { throwError: true });
           }
         }),
       );

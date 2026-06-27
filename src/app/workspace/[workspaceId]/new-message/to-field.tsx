@@ -49,19 +49,15 @@ export const ToField = ({ workspaceId, value, onChange }: ToFieldProps) => {
     : (members ?? []).filter(
         (m) =>
           !value.some((r) => r.type === 'member' && r.id === m._id) &&
-          (m.user.name?.toLowerCase().includes(searchTerm) ||
-            m.user.email?.toLowerCase().includes(searchTerm)),
+          (m.user.name?.toLowerCase().includes(searchTerm) || m.user.email?.toLowerCase().includes(searchTerm)),
       );
 
   const filteredChannels = (channels ?? []).filter(
-    (c) =>
-      !value.some((r) => r.type === 'channel' && r.id === c._id) &&
-      c.name.toLowerCase().includes(searchTerm),
+    (c) => !value.some((r) => r.type === 'channel' && r.id === c._id) && c.name.toLowerCase().includes(searchTerm),
   );
 
   const suggestions: Array<
-    | { kind: 'member'; member: (typeof filteredMembers)[0] }
-    | { kind: 'channel'; channel: (typeof filteredChannels)[0] }
+    { kind: 'member'; member: (typeof filteredMembers)[0] } | { kind: 'channel'; channel: (typeof filteredChannels)[0] }
   > = [
     ...filteredMembers.map((m) => ({ kind: 'member' as const, member: m })),
     ...(isChannelQuery ? [] : filteredChannels.map((c) => ({ kind: 'channel' as const, channel: c }))),
@@ -195,9 +191,7 @@ export const ToField = ({ workspaceId, value, onChange }: ToFieldProps) => {
                 addRecipient(s);
               }}
               onMouseEnter={() => setActiveIndex(i)}
-              className={`flex w-full items-center gap-2.5 px-3 py-2 text-sm ${
-                i === activeIndex ? 'bg-muted' : 'hover:bg-muted/50'
-              }`}
+              className={`flex w-full items-center gap-2.5 px-3 py-2 text-sm ${i === activeIndex ? 'bg-muted' : 'hover:bg-muted/50'}`}
             >
               {s.kind === 'member' ? (
                 <>

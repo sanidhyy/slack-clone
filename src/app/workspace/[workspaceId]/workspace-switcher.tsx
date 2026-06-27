@@ -48,7 +48,8 @@ export const WorkspaceSwitcher = () => {
             <Loader className="size-4 animate-spin text-muted-foreground" />
           </DropdownMenuItem>
         ) : (
-          filteredWorkspaces && filteredWorkspaces.length > 0 && (
+          filteredWorkspaces &&
+          filteredWorkspaces.length > 0 && (
             <>
               <DropdownMenuSeparator />
               {filteredWorkspaces.map((workspace) => (

@@ -15,6 +15,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useWorkspaceId } from '@/hooks/use-workspace-id';
+
 import { InviteModal } from './invite-modal';
 import { PreferencesModal } from './preferences-modal';
 
@@ -37,7 +38,11 @@ export const WorkspaceHeader = ({ workspace, isAdmin }: WorkspaceHeaderProps) =>
       <div className="flex h-[49px] items-center justify-between gap-0.5 px-4">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="transparent" className="w-auto overflow-hidden p-1.5 text-lg font-semibold text-[var(--workspace-sidebar-fg)]" size="sm">
+            <Button
+              variant="transparent"
+              className="w-auto overflow-hidden p-1.5 text-lg font-semibold text-[var(--workspace-sidebar-fg)]"
+              size="sm"
+            >
               <span className="truncate">{workspace.name}</span>
               <ChevronDown className="ml-1 size-4 shrink-0" />
             </Button>
@@ -81,7 +86,12 @@ export const WorkspaceHeader = ({ workspace, isAdmin }: WorkspaceHeaderProps) =>
           </Hint>
 
           <Hint label="New message" side="bottom">
-            <Button variant="transparent" size="iconSm" className="text-[var(--workspace-sidebar-fg)]" onClick={() => router.push(`/workspace/${workspaceId}/new-message`)}>
+            <Button
+              variant="transparent"
+              size="iconSm"
+              className="text-[var(--workspace-sidebar-fg)]"
+              onClick={() => router.push(`/workspace/${workspaceId}/new-message`)}
+            >
               <SquarePen className="size-4" />
             </Button>
           </Hint>

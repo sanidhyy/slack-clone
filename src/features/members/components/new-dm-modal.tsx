@@ -58,9 +58,7 @@ export const NewDmModal = () => {
             </button>
           ))}
 
-          {filtered?.length === 0 && (
-            <p className="px-4 py-6 text-center text-sm text-muted-foreground">No members found.</p>
-          )}
+          {filtered?.length === 0 && <p className="px-4 py-6 text-center text-sm text-muted-foreground">No members found.</p>}
         </div>
       </DialogContent>
     </Dialog>

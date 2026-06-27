@@ -34,12 +34,16 @@ export const Reactions = ({ data, onChange }: ReactionsProps) => {
             onClick={() => onChange(reaction.value)}
             className={cn(
               'flex h-6 items-center gap-x-1 rounded-full border border-transparent bg-muted px-2 text-foreground',
-              reaction.memberIds.includes(currentMemberId) && 'border-blue-500 bg-blue-100/70 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300',
+              reaction.memberIds.includes(currentMemberId) &&
+                'border-blue-500 bg-blue-100/70 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300',
             )}
           >
             {reaction.value}{' '}
             <span
-              className={cn('text-xs font-semibold text-muted-foreground', reaction.memberIds.includes(currentMemberId) && 'text-blue-600 dark:text-blue-400')}
+              className={cn(
+                'text-xs font-semibold text-muted-foreground',
+                reaction.memberIds.includes(currentMemberId) && 'text-blue-600 dark:text-blue-400',
+              )}
             >
               {reaction.count}
             </span>
