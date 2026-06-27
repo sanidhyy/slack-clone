@@ -71,8 +71,8 @@
     }
   ],
   "dependencies": {
-    "@auth/core": "^0.34.3",
-    "@convex-dev/auth": "^0.0.65",
+    "@auth/core": "0.41.2",
+    "@convex-dev/auth": "^0.0.94",
     "@radix-ui/react-alert-dialog": "^1.1.17",
     "@radix-ui/react-avatar": "^1.2.0",
     "@radix-ui/react-dialog": "^1.1.17",

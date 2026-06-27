@@ -1,8 +1,4 @@
-import {
-  convexAuthNextjsMiddleware,
-  createRouteMatcher,
-  nextjsMiddlewareRedirect,
-} from '@convex-dev/auth/nextjs/server';
+import { convexAuthNextjsMiddleware, createRouteMatcher, nextjsMiddlewareRedirect } from '@convex-dev/auth/nextjs/server';
 import { NextRequest } from 'next/server';
 
 const isPublicPage = createRouteMatcher(['/auth']);
