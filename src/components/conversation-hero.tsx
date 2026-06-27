@@ -20,7 +20,7 @@ export const ConversationHero = ({ name = 'Member', image }: ConversationHeroPro
         <p className="text-2xl font-bold">{name}</p>
       </div>
 
-      <p className="mb-4 text-base font-normal text-slate-800">
+      <p className="mb-4 text-base font-normal text-muted-foreground">
         This conversation is just between you and <strong>{name}</strong>
       </p>
     </div>

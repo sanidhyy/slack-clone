@@ -39,11 +39,11 @@
     --toolbar: #2a0942;
     --workspace-sidebar: #3b1a3d;
     --workspace-sidebar-fg: #E8D5F5CC;
-    --background: 222.2 84% 4.9%;
+    --background: 222.2 47.4% 11.2%;
     --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
+    --card: 222.2 47.4% 11.2%;
     --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
+    --popover: 222.2 47.4% 11.2%;
     --popover-foreground: 210 40% 98%;
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
@@ -162,6 +162,30 @@
 .dark .ql-toolbar button:hover .ql-fill,
 .dark .ql-toolbar button.ql-active .ql-fill {
   fill: hsl(var(--primary)) !important;
+}
+
+.ql-snow .ql-editor code {
+  background-color: hsl(var(--muted)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+.ql-snow .ql-tooltip {
+  background-color: hsl(var(--popover)) !important;
+  border-color: hsl(var(--border)) !important;
+  color: hsl(var(--popover-foreground)) !important;
+  box-shadow: 0 1px 3px hsl(var(--foreground) / 0.1) !important;
+}
+
+.ql-snow .ql-tooltip input[type='text'] {
+  background-color: hsl(var(--background)) !important;
+  border-color: hsl(var(--border)) !important;
+  color: hsl(var(--foreground)) !important;
+  outline: none !important;
+}
+
+.ql-snow .ql-tooltip a.ql-action,
+.ql-snow .ql-tooltip a.ql-remove {
+  color: hsl(var(--primary)) !important;
 }
 
 .ql-renderer {
