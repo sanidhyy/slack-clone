@@ -25,21 +25,21 @@ const WorkspaceIdLayout = ({ children }: Readonly<PropsWithChildren>) => {
       <div className="flex h-[calc(100vh_-_40px)]">
         <Sidebar />
 
-        <ResizablePanelGroup direction="horizontal" autoSaveId="slack-clone-workspace-layout">
-          <ResizablePanel defaultSize={20} minSize={11} className="bg-[#5E2C5F]">
+        <ResizablePanelGroup id="workspace-panel-group" direction="horizontal" autoSaveId="slack-clone-workspace-layout">
+          <ResizablePanel id="workspace-panel-sidebar" defaultSize={20} minSize={11} className="bg-[#5E2C5F]">
             <WorkspaceSidebar />
           </ResizablePanel>
 
           <ResizableHandle withHandle />
 
-          <ResizablePanel defaultSize={80} minSize={20}>
+          <ResizablePanel id="workspace-panel-main" defaultSize={80} minSize={20}>
             {children}
           </ResizablePanel>
 
           {showPanel && (
             <>
               <ResizableHandle withHandle />
-              <ResizablePanel minSize={20} defaultSize={29}>
+              <ResizablePanel id="workspace-panel-thread" minSize={20} defaultSize={29}>
                 {parentMessageId ? (
                   <Thread messageId={parentMessageId as Id<'messages'>} onClose={onClose} />
                 ) : profileMemberId ? (
