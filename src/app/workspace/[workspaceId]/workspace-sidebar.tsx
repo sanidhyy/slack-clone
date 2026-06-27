@@ -6,6 +6,7 @@ import { useGetChannels } from '@/features/channels/api/use-get-channels';
 import { useCreateChannelModal } from '@/features/channels/store/use-create-channel-modal';
 import { useCurrentMember } from '@/features/members/api/use-current-member';
 import { useGetMembers } from '@/features/members/api/use-get-members';
+import { useNewDmModal } from '@/features/members/store/use-new-dm-modal';
 import { useGetWorkspace } from '@/features/workspaces/api/use-get-workspace';
 import { useChannelId } from '@/hooks/use-channel-id';
 import { useMemberId } from '@/hooks/use-member-id';
@@ -22,6 +23,7 @@ export const WorkspaceSidebar = () => {
   const memberId = useMemberId();
 
   const [_open, setOpen] = useCreateChannelModal();
+  const [_dmOpen, setDmOpen] = useNewDmModal();
 
   const { data: member, isLoading: memberLoading } = useCurrentMember({ workspaceId });
   const { data: workspace, isLoading: workspaceLoading } = useGetWorkspace({ id: workspaceId });
@@ -64,7 +66,7 @@ export const WorkspaceSidebar = () => {
       )}
 
       {members && members.length !== 0 && (
-        <WorkspaceSection label="Direct Messages" hint="New Direct Message" onNew={member.role === 'admin' ? () => {} : undefined}>
+        <WorkspaceSection label="Direct Messages" hint="New Direct Message" onNew={() => setDmOpen(true)}>
           {members?.map((item) => (
             <UserItem
               key={item._id}
