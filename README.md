@@ -264,9 +264,9 @@ Useful resources and dependencies that are used in Slack Clone.
 
 - Thanks to CodeWithAntonio: https://codewithantonio.com/
 <!--- DEPENDENCIES_START --->
-- [@auth/core](https://www.npmjs.com/package/@auth/core): ^0.34.3
+- [@auth/core](https://www.npmjs.com/package/@auth/core): ^0.41.3
 - [@babel/eslint-parser](https://www.npmjs.com/package/@babel/eslint-parser): ^7.28.6
-- [@convex-dev/auth](https://www.npmjs.com/package/@convex-dev/auth): ^0.0.65
+- [@convex-dev/auth](https://www.npmjs.com/package/@convex-dev/auth): ^0.0.95
 - [@radix-ui/react-alert-dialog](https://www.npmjs.com/package/@radix-ui/react-alert-dialog): ^1.1.15
 - [@radix-ui/react-avatar](https://www.npmjs.com/package/@radix-ui/react-avatar): ^1.1.11
 - [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.1.15
@@ -284,7 +284,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
 - [cmdk](https://www.npmjs.com/package/cmdk): 1.1.1
-- [convex](https://www.npmjs.com/package/convex): ^1.15.0
+- [convex](https://www.npmjs.com/package/convex): ^1.44.0
 - [date-fns](https://www.npmjs.com/package/date-fns): ^4.1.0
 - [emoji-picker-react](https://www.npmjs.com/package/emoji-picker-react): ^4.18.0
 - [eslint](https://www.npmjs.com/package/eslint): ^8
