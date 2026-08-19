@@ -279,7 +279,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports): ^4.3.0
 - [@types/node](https://www.npmjs.com/package/@types/node): ^20.19.33
 - [@types/react](https://www.npmjs.com/package/@types/react): ^18.3.28
-- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^18.3.7
+- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.0.1
 - [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.0.33
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
@@ -306,7 +306,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [react-use](https://www.npmjs.com/package/react-use): ^17.6.0
 - [react-verification-input](https://www.npmjs.com/package/react-verification-input): ^4.2.2
 - [sonner](https://www.npmjs.com/package/sonner): ^1.7.4
-- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^2.6.1
+- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.6.0
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.4.19
 - [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): ^1.0.7
 - [typescript](https://www.npmjs.com/package/typescript): ^5.9.3
