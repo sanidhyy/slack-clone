@@ -126,6 +126,7 @@ slack-clone/
   |- postcss.config.mjs
   |- tailwind.config.ts
   |- tsconfig.json
+  |- vercel.sh
   |- vercel.ts
 ```
 <!--- FOLDER_STRUCTURE_END --->
