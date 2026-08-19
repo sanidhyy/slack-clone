@@ -44,6 +44,7 @@
 Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
+
 ```bash
 slack-clone/
   |- convex/
@@ -127,6 +128,7 @@ slack-clone/
   |- tsconfig.json
   |- vercel.ts
 ```
+
 <!--- FOLDER_STRUCTURE_END --->
 
 <br />
@@ -144,7 +146,7 @@ slack-clone/
 # disabled next.js telemetry
 NEXT_TELEMETRY_DISABLED=1
 
-# deployment used by `npx convex dev` or `bunx convex dev`
+# deployment used by `npx convex dev` or `pnpm dlx convex dev`
 CONVEX_DEPLOYMENT=dev:<deployment-name> # team: <team-name>, project: <project-name>
 
 # convex public url
@@ -164,7 +166,7 @@ NEXT_PUBLIC_CONVEX_URL="https://<deployment-name>.convex.cloud"
 
 6. Initialise Convex Auth Development Keys
 
-- Run the initialization command: `npx @convex-dev/auth` or `bunx @convex-dev/auth` to setup your project for authenticating via the library.
+- Run the initialization command: `npx @convex-dev/auth` or `pnpm dlx @convex-dev/auth` to setup your project for authenticating via the library.
 - Make sure your **SITE_URL** environment variable is set correctly. This is the URL where your app is hosted, e.g., `http://localhost:3000` for development.
 - Your project authentication is setup for logging in with credentials.
 
@@ -195,8 +197,8 @@ npx convex env set AUTH_GOOGLE_CLIENT_SECRET your-google-client-secret
 OR
 
 ```bash
-bunx convex env set AUTH_GOOGLE_CLIENT_ID your-google-client-id
-bunx convex env set AUTH_GOOGLE_CLIENT_SECRET your-google-client-secret
+pnpm dlx convex env set AUTH_GOOGLE_CLIENT_ID your-google-client-id
+pnpm dlx convex env set AUTH_GOOGLE_CLIENT_SECRET your-google-client-secret
 ```
 
 8. Setting Up GitHub OAuth
@@ -206,7 +208,6 @@ bunx convex env set AUTH_GOOGLE_CLIENT_SECRET your-google-client-secret
 - Go to [GitHub Developer Settings](https://github.com/settings/developers).
 - Under **OAuth Apps**, click **New OAuth App**.
 - Fill in the following:
-
   - **Application Name**: Name your app (e.g., "Slack Clone").
   - **Homepage URL**: Your app’s homepage URL, like `http://localhost:3000` for local development.
   - **Authorization Callback URL**: Set this to your Convex callback URL (Similar to Google OAuth **Authorized Redirect URI**).
@@ -225,13 +226,13 @@ npx convex env set AUTH_GITHUB_SECRET your-github-client-secret
 OR
 
 ```bash
-bunx convex env set AUTH_GITHUB_ID your-github-client-id
-bunx convex env set AUTH_GITHUB_SECRET your-github-client-secret
+pnpm dlx convex env set AUTH_GITHUB_ID your-github-client-id
+pnpm dlx convex env set AUTH_GITHUB_SECRET your-github-client-secret
 ```
 
-9. Install Project Dependencies using `npm install --legacy-peer-deps` or `yarn install --legacy-peer-deps` or `bun install --legacy-peer-deps`.
+9. Install Project Dependencies using `npm install --legacy-peer-deps` or `yarn install --legacy-peer-deps` or `pnpm install --legacy-peer-deps`.
 
-10. Now app is fully configured 👍 and you can start using this app using either one of `npm run dev` or `yarn dev` or `bun dev`.
+10. Now app is fully configured 👍 and you can start using this app using either one of `npm run dev` or `yarn dev` or `pnpm dev`.
 
 **NOTE:** Please make sure to keep your API keys and configuration values secure and do not expose them publicly.
 
