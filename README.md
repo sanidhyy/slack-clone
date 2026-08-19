@@ -44,7 +44,6 @@
 Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
-
 ```bash
 slack-clone/
   |- convex/
@@ -118,17 +117,17 @@ slack-clone/
   |- .gitignore
   |- .prettierrc.json
   |- .prettierrc.mjs
-  |- bun.lockb
   |- components.json
   |- environment.d.ts
   |- next.config.mjs
   |- package.json
+  |- pnpm-lock.yaml
+  |- pnpm-workspace.yaml
   |- postcss.config.mjs
   |- tailwind.config.ts
   |- tsconfig.json
   |- vercel.ts
 ```
-
 <!--- FOLDER_STRUCTURE_END --->
 
 <br />
