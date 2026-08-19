@@ -43,7 +43,7 @@
     "react-resizable-panels": "^2.1.9",
     "react-use": "^17.6.0",
     "react-verification-input": "^4.2.2",
-    "sonner": "^1.7.4",
+    "sonner": "^2.0.8",
     "tailwind-merge": "^3.6.0",
     "tailwindcss-animate": "^1.0.7"
   },
