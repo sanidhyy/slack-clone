@@ -305,7 +305,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [react-resizable-panels](https://www.npmjs.com/package/react-resizable-panels): ^2.1.9
 - [react-use](https://www.npmjs.com/package/react-use): ^17.6.0
 - [react-verification-input](https://www.npmjs.com/package/react-verification-input): ^4.2.2
-- [sonner](https://www.npmjs.com/package/sonner): ^1.7.4
+- [sonner](https://www.npmjs.com/package/sonner): ^2.0.8
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.6.0
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.4.19
 - [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): ^1.0.7
