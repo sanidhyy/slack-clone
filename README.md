@@ -276,7 +276,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.2.4
 - [@radix-ui/react-tooltip](https://www.npmjs.com/package/@radix-ui/react-tooltip): ^1.2.8
 - [@radix-ui/react-visually-hidden](https://www.npmjs.com/package/@radix-ui/react-visually-hidden): ^1.2.4
-- [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports): ^4.3.0
+- [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports): ^6.0.2
 - [@types/node](https://www.npmjs.com/package/@types/node): ^20.19.33
 - [@types/react](https://www.npmjs.com/package/@types/react): ^18.3.28
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.0.1
