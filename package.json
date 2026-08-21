@@ -65,7 +65,7 @@
   "packageManager": "pnpm@11.10.0",
   "author": {
     "name": "Sanidhya Kumar Verma",
-    "email": "sanidhya.verma12345@gmail.com",
+    "email": "sanidhyyy@gmail.com",
     "url": "https://github.com/sanidhyy"
   },
   "description": "Collaborate with your team using real-time messaging in this Slack clone built with Next.js, Convex, and Shadcn UI.",
@@ -110,7 +110,7 @@
   "homepage": "https://github.com/sanidhyy/slack-clone#readme",
   "bugs": {
     "url": "https://github.com/sanidhyy/slack-clone/issues",
-    "email": "sanidhya.verma12345@gmail.com"
+    "email": "sanidhyyy@gmail.com"
   },
   "funding": [
     {
