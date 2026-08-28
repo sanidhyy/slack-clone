@@ -292,7 +292,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
 - [cmdk](https://www.npmjs.com/package/cmdk): 1.1.1
-- [convex](https://www.npmjs.com/package/convex): ^1.44.0
+- [convex](https://www.npmjs.com/package/convex): ^1.45.0
 - [date-fns](https://www.npmjs.com/package/date-fns): ^4.1.0
 - [emoji-picker-react](https://www.npmjs.com/package/emoji-picker-react): ^4.18.0
 - [eslint](https://www.npmjs.com/package/eslint): ^8
