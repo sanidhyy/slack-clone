@@ -286,7 +286,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [@radix-ui/react-visually-hidden](https://www.npmjs.com/package/@radix-ui/react-visually-hidden): ^1.2.4
 - [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports): ^6.0.2
 - [@types/node](https://www.npmjs.com/package/@types/node): ^26.5.0
-- [@types/react](https://www.npmjs.com/package/@types/react): ^18.3.28
+- [@types/react](https://www.npmjs.com/package/@types/react): ^19.2.18
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.0.1
 - [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.7.0
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
