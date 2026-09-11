@@ -300,7 +300,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier): ^10.1.8
 - [eslint-plugin-prettier](https://www.npmjs.com/package/eslint-plugin-prettier): ^5.2.1
 - [jotai](https://www.npmjs.com/package/jotai): ^2.20.3
-- [lucide-react](https://www.npmjs.com/package/lucide-react): ^1.38.0
+- [lucide-react](https://www.npmjs.com/package/lucide-react): ^1.43.0
 - [next](https://www.npmjs.com/package/next): 15.5.21
 - [next-themes](https://www.npmjs.com/package/next-themes): ^0.4.6
 - [nuqs](https://www.npmjs.com/package/nuqs): ^2.10.1
