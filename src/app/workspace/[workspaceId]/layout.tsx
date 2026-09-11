@@ -31,11 +31,7 @@ const WorkspaceIdLayout = ({ children }: Readonly<PropsWithChildren>) => {
       <div className="flex h-[calc(100vh_-_40px)]">
         <Sidebar />
 
-        <ResizablePanelGroup
-          orientation="horizontal"
-          defaultLayout={defaultLayout}
-          onLayoutChange={onLayoutChange}
-        >
+        <ResizablePanelGroup orientation="horizontal" defaultLayout={defaultLayout} onLayoutChange={onLayoutChange}>
           <ResizablePanel id="sidebar" defaultSize="20%" minSize="11%" className="bg-[#5E2C5F]">
             <WorkspaceSidebar />
           </ResizablePanel>
