@@ -44,6 +44,7 @@
 Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
+
 ```bash
 slack-clone/
   |- convex/
@@ -129,6 +130,7 @@ slack-clone/
   |- vercel.sh
   |- vercel.ts
 ```
+
 <!--- FOLDER_STRUCTURE_END --->
 
 <br />
@@ -271,7 +273,9 @@ You might encounter some bugs while using this app. You are more than welcome to
 Useful resources and dependencies that are used in Slack Clone.
 
 - Thanks to CodeWithAntonio: https://codewithantonio.com/
+
 <!--- DEPENDENCIES_START --->
+
 - [@auth/core](https://www.npmjs.com/package/@auth/core): ^0.41.3
 - [@babel/eslint-parser](https://www.npmjs.com/package/@babel/eslint-parser): ^7.28.6
 - [@convex-dev/auth](https://www.npmjs.com/package/@convex-dev/auth): ^0.0.95
