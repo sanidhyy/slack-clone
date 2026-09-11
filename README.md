@@ -294,7 +294,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [cmdk](https://www.npmjs.com/package/cmdk): 1.1.1
 - [convex](https://www.npmjs.com/package/convex): ^1.45.0
 - [date-fns](https://www.npmjs.com/package/date-fns): ^4.1.0
-- [emoji-picker-react](https://www.npmjs.com/package/emoji-picker-react): ^4.18.0
+- [emoji-picker-react](https://www.npmjs.com/package/emoji-picker-react): ^4.20.2
 - [eslint](https://www.npmjs.com/package/eslint): ^8
 - [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 15.5.25
 - [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier): ^10.1.8
