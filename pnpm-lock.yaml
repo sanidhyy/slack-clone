@@ -60,8 +60,8 @@ importers:
         specifier: ^4.1.0
         version: 4.4.0
       emoji-picker-react:
-        specifier: ^4.18.0
-        version: 4.19.1(react@19.2.8)
+        specifier: ^4.20.2
+        version: 4.20.2(react@19.2.8)
       jotai:
         specifier: ^2.20.3
         version: 2.20.3(@babel/core@7.29.7)(@babel/template@7.29.7)(@types/react@18.3.31)(react@19.2.8)
@@ -1658,11 +1658,11 @@ packages:
   electron-to-chromium@1.5.407:
     resolution: {integrity: sha512-4R8XgQOdfxexCd/u63lRm6wCHjECwI45MV9wxAs2ggtfWe2hwlo1ql97jKsju2IcJ+jFSTwBssyYoiWhh7mauQ==}
 
-  emoji-picker-react@4.19.1:
-    resolution: {integrity: sha512-BmDdqInKFVYJpv7qS9WI6L9656cDAC+FkDvUjJds56nKHbaVTBNeDmLwKBytRnzu37zWHs9Isg7gt5PT43y6xA==}
+  emoji-picker-react@4.20.2:
+    resolution: {integrity: sha512-bE1Y6je2HNUm5TGjoTNYSjlpVxITC+rkvvMMaLPx9lYD283pDj6qtG2H62KOcPVgQUBaHed3dDtOPKZ2zXMXcQ==}
     engines: {node: '>=10'}
     peerDependencies:
-      react: '>=16'
+      react: '>=16.8'
 
   emoji-regex@9.2.2:
     resolution: {integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==}
@@ -1916,8 +1916,8 @@ packages:
     resolution: {integrity: sha512-78/PXT1wlLLDgTzDs7sjq9hzz0vXD+zn+7wypEe4fXQxCmdmqfGsEPQxmiCSQI3ajFV91bVSsvNtrJRiW6nGng==}
     engines: {node: '>=10'}
 
-  flairup@1.0.0:
-    resolution: {integrity: sha512-IKlE+pNvL2R+kVL1kEhUYqRxVqeFnjiIvHWDMLFXNaqyUdFXQM2wte44EfMYJNHkW16X991t2Zg8apKkhv7OBA==}
+  flairup@1.1.2:
+    resolution: {integrity: sha512-AiTgxMXuGu5YpEe+39c61pe+0dhmzGMQkntbJjK9FdUY/UmtqlhIVGtrBR2zznbShArdjKWyYNV3mGBJC7fTWQ==}
 
   flat-cache@3.2.0:
     resolution: {integrity: sha512-CYcENa+FtcUKLmhhqyctpclsq7QF38pKjZHsGNiSQF5r4FtoKDWabFDl3hzaEQMvT1LHEysw5twgLvpYYb4vbw==}
@@ -4565,9 +4565,9 @@ snapshots:
 
   electron-to-chromium@1.5.407: {}
 
-  emoji-picker-react@4.19.1(react@19.2.8):
+  emoji-picker-react@4.20.2(react@19.2.8):
     dependencies:
-      flairup: 1.0.0
+      flairup: 1.1.2
       react: 19.2.8
 
   emoji-regex@9.2.2: {}
@@ -4991,7 +4991,7 @@ snapshots:
       locate-path: 6.0.0
       path-exists: 4.0.0
 
-  flairup@1.0.0: {}
+  flairup@1.1.2: {}
 
   flat-cache@3.2.0:
     dependencies:
