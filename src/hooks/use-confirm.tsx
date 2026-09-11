@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import {
   AlertDialog,
@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/alert-dialog';
 import { Button } from '@/components/ui/button';
 
-export const useConfirm = (title: string, message: string): [() => JSX.Element, () => Promise<unknown>] => {
+export const useConfirm = (title: string, message: string): [() => React.JSX.Element, () => Promise<unknown>] => {
   const [promise, setPromise] = useState<{ resolve: (value: boolean) => void } | null>(null);
 
   const confirm = () =>
