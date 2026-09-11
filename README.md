@@ -44,7 +44,6 @@
 Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
-
 ```bash
 slack-clone/
   |- convex/
@@ -116,8 +115,8 @@ slack-clone/
   |- .env/.env.local
   |- .eslintrc.json
   |- .gitignore
+  |- .prettierignore
   |- .prettierrc.json
-  |- .prettierrc.mjs
   |- components.json
   |- environment.d.ts
   |- next.config.mjs
@@ -130,7 +129,6 @@ slack-clone/
   |- vercel.sh
   |- vercel.ts
 ```
-
 <!--- FOLDER_STRUCTURE_END --->
 
 <br />
@@ -275,7 +273,6 @@ Useful resources and dependencies that are used in Slack Clone.
 - Thanks to CodeWithAntonio: https://codewithantonio.com/
 
 <!--- DEPENDENCIES_START --->
-
 - [@auth/core](https://www.npmjs.com/package/@auth/core): ^0.41.3
 - [@babel/eslint-parser](https://www.npmjs.com/package/@babel/eslint-parser): ^7.28.6
 - [@convex-dev/auth](https://www.npmjs.com/package/@convex-dev/auth): ^0.0.95
@@ -309,12 +306,13 @@ Useful resources and dependencies that are used in Slack Clone.
 - [next-themes](https://www.npmjs.com/package/next-themes): ^0.4.6
 - [nuqs](https://www.npmjs.com/package/nuqs): ^2.10.1
 - [postcss](https://www.npmjs.com/package/postcss): ^8.5.6
+- [prettier](https://www.npmjs.com/package/prettier): ^3.9.6
 - [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss): ^0.8.1
 - [quill](https://www.npmjs.com/package/quill): ^2.0.3
 - [react](https://www.npmjs.com/package/react): ^19.2.4
 - [react-dom](https://www.npmjs.com/package/react-dom): ^19.2.4
 - [react-icons](https://www.npmjs.com/package/react-icons): ^5.5.0
-- [react-resizable-panels](https://www.npmjs.com/package/react-resizable-panels): ^2.1.9
+- [react-resizable-panels](https://www.npmjs.com/package/react-resizable-panels): ^4.12.4
 - [react-use](https://www.npmjs.com/package/react-use): ^17.6.0
 - [react-verification-input](https://www.npmjs.com/package/react-verification-input): ^4.2.2
 - [sonner](https://www.npmjs.com/package/sonner): ^2.0.8
