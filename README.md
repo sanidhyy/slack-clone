@@ -289,7 +289,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [@types/node](https://www.npmjs.com/package/@types/node): ^26.5.0
 - [@types/react](https://www.npmjs.com/package/@types/react): ^19.2.18
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.0.1
-- [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.7.0
+- [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.7.1
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
 - [cmdk](https://www.npmjs.com/package/cmdk): 1.1.1
