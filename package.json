@@ -48,7 +48,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.28.6",
+    "@babel/eslint-parser": "^7.29.9",
     "@trivago/prettier-plugin-sort-imports": "^6.0.2",
     "@types/node": "^26.5.0",
     "@types/react": "^19.3.0",
