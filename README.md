@@ -312,7 +312,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [react](https://www.npmjs.com/package/react): ^19.3.0
 - [react-dom](https://www.npmjs.com/package/react-dom): ^19.3.0
 - [react-icons](https://www.npmjs.com/package/react-icons): ^5.5.0
-- [react-resizable-panels](https://www.npmjs.com/package/react-resizable-panels): ^4.12.4
+- [react-resizable-panels](https://www.npmjs.com/package/react-resizable-panels): ^4.14.7
 - [react-use](https://www.npmjs.com/package/react-use): ^17.6.0
 - [react-verification-input](https://www.npmjs.com/package/react-verification-input): ^4.2.2
 - [sonner](https://www.npmjs.com/package/sonner): ^2.0.8
