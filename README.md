@@ -289,7 +289,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [@types/node](https://www.npmjs.com/package/@types/node): ^26.6.5
 - [@types/react](https://www.npmjs.com/package/@types/react): ^19.3.0
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.3.0
-- [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.7.2
+- [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.12.0
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
 - [cmdk](https://www.npmjs.com/package/cmdk): 1.1.1
@@ -302,7 +302,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [eslint-plugin-prettier](https://www.npmjs.com/package/eslint-plugin-prettier): ^5.2.1
 - [jotai](https://www.npmjs.com/package/jotai): ^2.20.3
 - [lucide-react](https://www.npmjs.com/package/lucide-react): ^1.46.0
-- [next](https://www.npmjs.com/package/next): 16.4.0
+- [next](https://www.npmjs.com/package/next): 16.4.2
 - [next-themes](https://www.npmjs.com/package/next-themes): ^0.4.6
 - [nuqs](https://www.npmjs.com/package/nuqs): ^2.10.1
 - [postcss](https://www.npmjs.com/package/postcss): ^8.5.28
