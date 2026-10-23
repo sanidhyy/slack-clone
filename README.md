@@ -277,7 +277,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [@babel/eslint-parser](https://www.npmjs.com/package/@babel/eslint-parser): ^7.29.9
 - [@convex-dev/auth](https://www.npmjs.com/package/@convex-dev/auth): ^0.0.95
 - [@radix-ui/react-alert-dialog](https://www.npmjs.com/package/@radix-ui/react-alert-dialog): ^1.1.15
-- [@radix-ui/react-avatar](https://www.npmjs.com/package/@radix-ui/react-avatar): ^1.1.11
+- [@radix-ui/react-avatar](https://www.npmjs.com/package/@radix-ui/react-avatar): ^1.3.1
 - [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.3.1
 - [@radix-ui/react-dropdown-menu](https://www.npmjs.com/package/@radix-ui/react-dropdown-menu): ^2.2.1
 - [@radix-ui/react-popover](https://www.npmjs.com/package/@radix-ui/react-popover): ^1.3.1
