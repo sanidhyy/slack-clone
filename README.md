@@ -295,7 +295,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [cmdk](https://www.npmjs.com/package/cmdk): 1.1.1
 - [convex](https://www.npmjs.com/package/convex): ^1.49.0
 - [date-fns](https://www.npmjs.com/package/date-fns): ^4.1.0
-- [emoji-picker-react](https://www.npmjs.com/package/emoji-picker-react): ^5.1.0
+- [emoji-picker-react](https://www.npmjs.com/package/emoji-picker-react): ^5.1.4
 - [eslint](https://www.npmjs.com/package/eslint): ^8
 - [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 15.5.28
 - [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier): ^10.1.8
@@ -312,7 +312,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [react](https://www.npmjs.com/package/react): ^19.3.0
 - [react-dom](https://www.npmjs.com/package/react-dom): ^19.3.0
 - [react-icons](https://www.npmjs.com/package/react-icons): ^5.5.0
-- [react-resizable-panels](https://www.npmjs.com/package/react-resizable-panels): ^4.14.7
+- [react-resizable-panels](https://www.npmjs.com/package/react-resizable-panels): ^4.17.0
 - [react-use](https://www.npmjs.com/package/react-use): ^17.6.0
 - [react-verification-input](https://www.npmjs.com/package/react-verification-input): ^4.2.2
 - [sonner](https://www.npmjs.com/package/sonner): ^2.0.8
