@@ -293,7 +293,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
 - [cmdk](https://www.npmjs.com/package/cmdk): 1.1.1
-- [convex](https://www.npmjs.com/package/convex): ^1.48.0
+- [convex](https://www.npmjs.com/package/convex): ^1.49.0
 - [date-fns](https://www.npmjs.com/package/date-fns): ^4.1.0
 - [emoji-picker-react](https://www.npmjs.com/package/emoji-picker-react): ^5.1.0
 - [eslint](https://www.npmjs.com/package/eslint): ^8
@@ -302,7 +302,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [eslint-plugin-prettier](https://www.npmjs.com/package/eslint-plugin-prettier): ^5.2.1
 - [jotai](https://www.npmjs.com/package/jotai): ^2.20.3
 - [lucide-react](https://www.npmjs.com/package/lucide-react): ^1.46.0
-- [next](https://www.npmjs.com/package/next): 16.4.2
+- [next](https://www.npmjs.com/package/next): 16.4.4
 - [next-themes](https://www.npmjs.com/package/next-themes): ^0.4.6
 - [nuqs](https://www.npmjs.com/package/nuqs): ^2.10.2
 - [postcss](https://www.npmjs.com/package/postcss): ^8.5.32
