@@ -3,7 +3,9 @@
   "version": "1.0.1",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "mprocs \"pnpm run dev:next\" \"pnpm run dev:convex\"",
+    "dev:next": "next dev",
+    "dev:convex": "convex dev",
     "build": "next build",
     "build:production": "pnpm dlx convex deploy --cmd 'pnpm run build'",
     "start": "next start",
@@ -57,6 +59,7 @@
     "eslint-config-next": "15.5.28",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.2.1",
+    "mprocs": "^0.9.6",
     "postcss": "^8.5.32",
     "prettier": "^3.9.8",
     "prettier-plugin-tailwindcss": "^0.8.1",
