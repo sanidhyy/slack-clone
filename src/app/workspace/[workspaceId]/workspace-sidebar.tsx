@@ -50,9 +50,9 @@ export const WorkspaceSidebar = () => {
       <WorkspaceHeader workspace={workspace} isAdmin={member.role === 'admin'} />
 
       <div className="mt-3 flex flex-col px-2">
-        <SidebarItem label="Threads" icon={MessageSquareText} id="threads" />
+        <SidebarItem label="Threads" icon={MessageSquareText} id="threads" disabled />
 
-        <SidebarItem label="Drafts & Sent" icon={SendHorizonal} id="draft" />
+        <SidebarItem label="Drafts & Sent" icon={SendHorizonal} id="draft" disabled />
       </div>
 
       {channels && channels.length !== 0 && (
