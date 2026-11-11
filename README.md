@@ -110,7 +110,7 @@ slack-clone/
       |--- use-workspace-id.ts
     |-- lib/
       |--- utils.ts
-    |-- middleware.ts
+    |-- proxy.ts
   |- .env.example
   |- .env/.env.local
   |- .eslintrc.json
@@ -118,6 +118,7 @@ slack-clone/
   |- .prettierignore
   |- .prettierrc.json
   |- components.json
+  |- convex.json
   |- environment.d.ts
   |- next.config.mjs
   |- package.json
@@ -302,6 +303,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [eslint-plugin-prettier](https://www.npmjs.com/package/eslint-plugin-prettier): ^5.2.1
 - [jotai](https://www.npmjs.com/package/jotai): ^2.20.3
 - [lucide-react](https://www.npmjs.com/package/lucide-react): ^1.46.0
+- [mprocs](https://www.npmjs.com/package/mprocs): ^0.9.6
 - [next](https://www.npmjs.com/package/next): 16.4.4
 - [next-themes](https://www.npmjs.com/package/next-themes): ^0.4.6
 - [nuqs](https://www.npmjs.com/package/nuqs): ^2.10.2
