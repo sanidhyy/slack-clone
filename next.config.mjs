@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: { unoptimized: true },
+  agentRules: false,
+  devIndicators: false,
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
