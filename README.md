@@ -276,7 +276,7 @@ Useful resources and dependencies that are used in Slack Clone.
 <!--- DEPENDENCIES_START --->
 - [@auth/core](https://www.npmjs.com/package/@auth/core): ^0.41.3
 - [@babel/eslint-parser](https://www.npmjs.com/package/@babel/eslint-parser): ^7.29.9
-- [@convex-dev/auth](https://www.npmjs.com/package/@convex-dev/auth): ^0.0.96
+- [@convex-dev/auth](https://www.npmjs.com/package/@convex-dev/auth): ^0.0.98
 - [@radix-ui/react-alert-dialog](https://www.npmjs.com/package/@radix-ui/react-alert-dialog): ^1.2.1
 - [@radix-ui/react-avatar](https://www.npmjs.com/package/@radix-ui/react-avatar): ^1.3.1
 - [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.3.1
@@ -306,7 +306,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [mprocs](https://www.npmjs.com/package/mprocs): ^0.9.6
 - [next](https://www.npmjs.com/package/next): 16.4.4
 - [next-themes](https://www.npmjs.com/package/next-themes): ^0.4.6
-- [nuqs](https://www.npmjs.com/package/nuqs): ^2.10.2
+- [nuqs](https://www.npmjs.com/package/nuqs): ^2.10.3
 - [postcss](https://www.npmjs.com/package/postcss): ^8.5.32
 - [prettier](https://www.npmjs.com/package/prettier): ^3.9.8
 - [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss): ^0.8.1
@@ -314,7 +314,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [react](https://www.npmjs.com/package/react): ^19.3.1
 - [react-dom](https://www.npmjs.com/package/react-dom): ^19.3.0
 - [react-icons](https://www.npmjs.com/package/react-icons): ^5.5.0
-- [react-resizable-panels](https://www.npmjs.com/package/react-resizable-panels): ^4.17.0
+- [react-resizable-panels](https://www.npmjs.com/package/react-resizable-panels): ^4.21.0
 - [react-use](https://www.npmjs.com/package/react-use): ^17.6.0
 - [react-verification-input](https://www.npmjs.com/package/react-verification-input): ^4.2.2
 - [sonner](https://www.npmjs.com/package/sonner): ^2.0.8
