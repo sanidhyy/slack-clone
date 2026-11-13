@@ -12,8 +12,8 @@ importers:
         specifier: ^0.41.3
         version: 0.41.3
       '@convex-dev/auth':
-        specifier: ^0.0.96
-        version: 0.0.96(@auth/core@0.41.3)(convex@1.49.0(react@19.3.1))(react@19.3.1)
+        specifier: ^0.0.98
+        version: 0.0.98(@auth/core@0.41.3)(convex@1.49.0(react@19.3.1))(react@19.3.1)
       '@radix-ui/react-alert-dialog':
         specifier: ^1.2.1
         version: 1.2.1(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.1))(react@19.3.1)
@@ -252,8 +252,8 @@ packages:
     resolution: {integrity: sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg==}
     engines: {node: '>=6.9.0'}
 
-  '@convex-dev/auth@0.0.96':
-    resolution: {integrity: sha512-4vcoQmmlbInLpR6BK43iIH21JwVPG5U7kRIjLaUWkeEr+hVaS/DuYsQRrDsDLu9rbHpq9PT2ZkUrtPDLkxYx0A==}
+  '@convex-dev/auth@0.0.98':
+    resolution: {integrity: sha512-lcgZ0V7z6bcvqTFsXjFa/ZsZclanmltGBaJMJtcdp+x7VeFv7h3+CWE+JGv402C+71itMBkQXONZxBaMe/7ocQ==}
     hasBin: true
     peerDependencies:
       '@auth/core': ^0.41.1
@@ -3368,7 +3368,7 @@ snapshots:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
-  '@convex-dev/auth@0.0.96(@auth/core@0.41.3)(convex@1.49.0(react@19.3.1))(react@19.3.1)':
+  '@convex-dev/auth@0.0.98(@auth/core@0.41.3)(convex@1.49.0(react@19.3.1))(react@19.3.1)':
     dependencies:
       '@auth/core': 0.41.3
       '@oslojs/crypto': 1.0.1
