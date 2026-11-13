@@ -311,7 +311,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [prettier](https://www.npmjs.com/package/prettier): ^3.9.8
 - [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss): ^0.8.1
 - [quill](https://www.npmjs.com/package/quill): ^2.0.3
-- [react](https://www.npmjs.com/package/react): ^19.3.0
+- [react](https://www.npmjs.com/package/react): ^19.3.1
 - [react-dom](https://www.npmjs.com/package/react-dom): ^19.3.0
 - [react-icons](https://www.npmjs.com/package/react-icons): ^5.5.0
 - [react-resizable-panels](https://www.npmjs.com/package/react-resizable-panels): ^4.17.0
