@@ -304,7 +304,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [jotai](https://www.npmjs.com/package/jotai): ^2.20.3
 - [lucide-react](https://www.npmjs.com/package/lucide-react): ^1.46.0
 - [mprocs](https://www.npmjs.com/package/mprocs): ^0.9.6
-- [next](https://www.npmjs.com/package/next): 16.4.4
+- [next](https://www.npmjs.com/package/next): 16.4.5
 - [next-themes](https://www.npmjs.com/package/next-themes): ^0.4.6
 - [nuqs](https://www.npmjs.com/package/nuqs): ^2.10.3
 - [postcss](https://www.npmjs.com/package/postcss): ^8.5.32
