@@ -288,8 +288,8 @@ Useful resources and dependencies that are used in Slack Clone.
 - [@radix-ui/react-visually-hidden](https://www.npmjs.com/package/@radix-ui/react-visually-hidden): ^1.2.13
 - [@trivago/prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports): ^6.0.2
 - [@types/node](https://www.npmjs.com/package/@types/node): ^26.6.6
-- [@types/react](https://www.npmjs.com/package/@types/react): ^19.3.0
-- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.3.0
+- [@types/react](https://www.npmjs.com/package/@types/react): ^19
+- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19
 - [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.14.1
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
@@ -312,7 +312,7 @@ Useful resources and dependencies that are used in Slack Clone.
 - [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss): ^0.8.1
 - [quill](https://www.npmjs.com/package/quill): ^2.0.3
 - [react](https://www.npmjs.com/package/react): ^19.3.1
-- [react-dom](https://www.npmjs.com/package/react-dom): ^19.3.0
+- [react-dom](https://www.npmjs.com/package/react-dom): ^19.3.1
 - [react-icons](https://www.npmjs.com/package/react-icons): ^5.5.0
 - [react-resizable-panels](https://www.npmjs.com/package/react-resizable-panels): ^4.21.0
 - [react-use](https://www.npmjs.com/package/react-use): ^17.6.0
